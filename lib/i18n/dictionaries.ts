@@ -72,6 +72,10 @@ export type Dictionary = {
     pageTitle: string;
     pageText: string;
     collections: string;
+    filterAll: string;
+    sport: string;
+    floor: string;
+    wall: string;
     products: Record<string, ProductCopy>;
   };
   gallery: {
@@ -197,32 +201,24 @@ export const dictionaries: Record<Locale, Dictionary> = {
       request: "Запросить расчет",
       pageTitle: "Каталог напольных покрытий Gerflor",
       pageText:
-        "Линейки для спорта, образования, здравоохранения и коммерции. Цены на Taraflex Evolution, Performance и Comfort — ориентир для расчета объекта; точная смета зависит от площади, основания и разметки.",
+        "Спортивные покрытия Taraflex, коммерческие рулоны Taralay и настенная коллекция Mural Revela. Цены на Evolution, Performance и Comfort — ориентир для расчета; точная смета зависит от площади, основания и разметки.",
       collections: "Коллекции и тарифы",
+      filterAll: "Все",
+      sport: "Спортивные покрытия",
+      floor: "Напольные покрытия",
+      wall: "Настенные покрытия",
       products: {
-        "heterogeneous-rolls": {
-          title: "Гетерогенные рулонные покрытия",
+        "taraflex-evolution": {
+          title: "Taraflex Evolution",
           summary:
-            "Многослойный винил Taralay и Creation для школ, офисов, клиник и ритейла: дизайн под дерево и камень, износостойкость и простой уход.",
-          imageAlt:
-            "Гетерогенное рулонное покрытие Gerflor под дерево в коммерческом интерьере",
+            "Базовая спортивная серия для тренировок и соревнований среднего уровня. Популярное решение для волейбольных залов Казахстана.",
+          imageAlt: "Покрытие Gerflor Taraflex Evolution 7.5 мм",
           specs: [
-            "Высокая нагрузка (education, healthcare, offices)",
-            "Защитный слой PUR / Easycare",
-            "Антибактериальные свойства",
+            "Толщина ~ 7,50 мм",
+            "Категория P1 (25–35%)",
+            "FIVB, залы и арены",
           ],
-        },
-        taraflex: {
-          title: "Спортивные покрытия Taraflex",
-          summary:
-            "Системы Taraflex и Powergame+ для залов, арен, школ и федераций. Сертификация FIVB, амортизация и безопасное сцепление.",
-          imageAlt: "Спортивный зал с покрытием Gerflor Taraflex",
-          specs: [
-            "Evolution 7,5 мм · категория P1",
-            "Comfort 12,5 мм · категория P3",
-            "Сертификация FIVB / FIBA",
-          ],
-          price: "от 47 500 ₸ / м²",
+          price: "47 500 ₸ / м²",
         },
         "taraflex-performance": {
           title: "Taraflex Performance",
@@ -236,17 +232,215 @@ export const dictionaries: Record<Locale, Dictionary> = {
           ],
           price: "62 500 ₸ / м²",
         },
-        "taraflex-evolution": {
-          title: "Taraflex Evolution",
+        "taraflex-comfort": {
+          title: "Taraflex Comfort",
           summary:
-            "Базовая спортивная серия для тренировок и соревнований среднего уровня. Популярное решение для волейбольных залов Казахстана.",
-          imageAlt: "Покрытие Gerflor Taraflex Evolution 7.5 мм",
+            "Спортивное покрытие с повышенным комфортом для школ, многофункциональных залов и площадок, где важна защита суставов.",
+          imageAlt: "Спортивное покрытие Gerflor Taraflex Comfort",
           specs: [
-            "Толщина ~ 7,50 мм",
-            "Категория P1 (25–35%)",
-            "FIVB, залы и арены",
+            "Толщина ~ 12,50 мм",
+            "Категория P3 (ударопоглощение > 45%)",
+            "Образование и универсальные залы",
           ],
-          price: "47 500 ₸ / м²",
+          price: "78 000 ₸ / м²",
+        },
+        "taraflex-multi-use": {
+          title: "Taraflex Multi-Use",
+          summary:
+            "Многофункциональное спортивное покрытие Taraflex для залов с разными видами спорта и сменным расписанием.",
+          imageAlt: "Многофункциональный зал с Gerflor Taraflex Multi-Use",
+          specs: [
+            "Линейка Taraflex",
+            "Универсальные спортивные залы",
+            "Поставка и монтаж в Казахстане",
+          ],
+        },
+        "taraflex-tennis": {
+          title: "Taraflex Tennis",
+          summary:
+            "Спортивное покрытие Taraflex для теннисных кортов: амортизация и стабильная игровая поверхность.",
+          imageAlt: "Теннисный корт с покрытием Gerflor Taraflex Tennis",
+          specs: [
+            "Для теннисных кортов",
+            "Линейка Taraflex",
+            "Поставка и монтаж в Казахстане",
+          ],
+        },
+        "taraflex-badminton": {
+          title: "Taraflex Badminton",
+          summary:
+            "Покрытие Taraflex для бадминтона: сцепление и комфорт для тренировок и матчей.",
+          imageAlt: "Площадка для бадминтона Gerflor Taraflex",
+          specs: [
+            "Для бадминтона",
+            "Линейка Taraflex",
+            "Поставка и монтаж в Казахстане",
+          ],
+        },
+        "taraflex-futsal": {
+          title: "Taraflex Futsal",
+          summary:
+            "Спортивное покрытие Taraflex для футзала: износостойкая игровая поверхность для залов.",
+          imageAlt: "Зал для футзала с Gerflor Taraflex Futsal",
+          specs: [
+            "Для футзала",
+            "Линейка Taraflex",
+            "Поставка и монтаж в Казахстане",
+          ],
+        },
+        "taraflex-table-tennis": {
+          title: "Taraflex Table Tennis",
+          summary:
+            "Покрытие Taraflex для залов настольного тенниса: ровная поверхность и комфорт при длительных нагрузках.",
+          imageAlt: "Зал настольного тенниса с Gerflor Taraflex",
+          specs: [
+            "Для настольного тенниса",
+            "Линейка Taraflex",
+            "Поставка и монтаж в Казахстане",
+          ],
+        },
+        "taraflex-surface": {
+          title: "Taraflex Surface",
+          summary:
+            "Спортивное покрытие Taraflex Surface для площадок роликового катания и смежных indoor-дисциплин.",
+          imageAlt: "Площадка на Gerflor Taraflex Surface",
+          specs: [
+            "Для роликового катания",
+            "Линейка Taraflex",
+            "Поставка и монтаж в Казахстане",
+          ],
+        },
+        "taraflex-bateco": {
+          title: "Taraflex Bateco",
+          summary:
+            "Спортивное покрытие Taraflex Bateco на основе переработанных материалов в линейке Gerflor.",
+          imageAlt: "Спортивное покрытие Gerflor Taraflex Bateco",
+          specs: [
+            "Линейка Taraflex",
+            "Переработанные материалы",
+            "Поставка и монтаж в Казахстане",
+          ],
+        },
+        "taralay-element-comfort": {
+          title: "Taralay Element Comfort",
+          summary:
+            "Гетерогенное рулонное покрытие Taralay Comfort для школ, офисов и общественных интерьеров с амортизирующей основой.",
+          imageAlt: "Рулонное покрытие Gerflor Taralay Element Comfort",
+          specs: [
+            "Коммерческие интерьеры",
+            "Серия Comfort",
+            "Поставка и укладка в Казахстане",
+          ],
+        },
+        "taralay-element-compact": {
+          title: "Taralay Element Compact",
+          summary:
+            "Гетерогенное рулонное покрытие Taralay Compact для помещений с высокой проходимостью.",
+          imageAlt: "Рулонное покрытие Gerflor Taralay Element Compact",
+          specs: [
+            "Высокая проходимость",
+            "Серия Compact",
+            "Поставка и укладка в Казахстане",
+          ],
+        },
+        "taralay-uni-comfort": {
+          title: "Taralay Uni Comfort",
+          summary:
+            "Однотонная коллекция Taralay Comfort для коридоров, образования и здравоохранения.",
+          imageAlt: "Однотонное покрытие Gerflor Taralay Uni Comfort",
+          specs: [
+            "Однотонный дизайн",
+            "Серия Comfort",
+            "Поставка и укладка в Казахстане",
+          ],
+        },
+        "taralay-initial-comfort": {
+          title: "Taralay Initial Comfort",
+          summary:
+            "Коллекция Taralay Initial Comfort для коммерческих и общественных пространств с акцентом на комфорт при ходьбе.",
+          imageAlt: "Покрытие Gerflor Taralay Initial Comfort",
+          specs: [
+            "Коммерческие пространства",
+            "Серия Comfort",
+            "Поставка и укладка в Казахстане",
+          ],
+        },
+        "taralay-impression-comfort": {
+          title: "Taralay Impression Comfort",
+          summary:
+            "Дизайнерская коллекция Taralay Impression Comfort: декоративный слой и комфортная основа.",
+          imageAlt: "Дизайнерское покрытие Gerflor Taralay Impression Comfort",
+          specs: [
+            "Декоративные дизайны",
+            "Серия Comfort",
+            "Поставка и укладка в Казахстане",
+          ],
+        },
+        "taralay-impression-compact": {
+          title: "Taralay Impression Compact",
+          summary:
+            "Коллекция Taralay Impression Compact для износостойких декоративных полов в коммерции.",
+          imageAlt: "Покрытие Gerflor Taralay Impression Compact",
+          specs: [
+            "Декоративные дизайны",
+            "Серия Compact",
+            "Поставка и укладка в Казахстане",
+          ],
+        },
+        "taralay-impression-hop-compact": {
+          title: "Taralay Impression Hop Compact",
+          summary:
+            "Коллекция Taralay Impression Hop Compact — декоративное коммерческое покрытие в линейке Compact.",
+          imageAlt: "Покрытие Gerflor Taralay Impression Hop Compact",
+          specs: [
+            "Коллекция Impression Hop",
+            "Серия Compact",
+            "Поставка и укладка в Казахстане",
+          ],
+        },
+        "taralay-premium-comfort": {
+          title: "Taralay Premium Comfort",
+          summary:
+            "Премиальная коллекция Taralay Comfort для представительских и общественных интерьеров.",
+          imageAlt: "Покрытие Gerflor Taralay Premium Comfort",
+          specs: [
+            "Премиальная линейка Taralay",
+            "Серия Comfort",
+            "Поставка и укладка в Казахстане",
+          ],
+        },
+        "taralay-premium-compact": {
+          title: "Taralay Premium Compact",
+          summary:
+            "Премиальная коллекция Taralay Compact для коммерческих полов с высокой нагрузкой.",
+          imageAlt: "Покрытие Gerflor Taralay Premium Compact",
+          specs: [
+            "Премиальная линейка Taralay",
+            "Серия Compact",
+            "Поставка и укладка в Казахстане",
+          ],
+        },
+        "taralay-libertex": {
+          title: "Taralay Libertex",
+          summary:
+            "Гетерогенное покрытие Taralay Libertex с антибактериальными свойствами для здравоохранения и общественных зон.",
+          imageAlt: "Покрытие Gerflor Taralay Libertex",
+          specs: [
+            "Антибактериальные свойства",
+            "Линейка Taralay",
+            "Поставка и укладка в Казахстане",
+          ],
+        },
+        "mural-revela": {
+          title: "Mural Revela",
+          summary:
+            "Настенные плитки Gerflor Mural Revela: огнестойкое решение для стен в общественных и коммерческих интерьерах.",
+          imageAlt: "Настенные плитки Gerflor Mural Revela",
+          specs: [
+            "Настенные покрытия",
+            "Огнестойкие плитки",
+            "Поставка и монтаж в Казахстане",
+          ],
         },
       },
     },
@@ -448,32 +642,24 @@ export const dictionaries: Record<Locale, Dictionary> = {
       request: "Есеп сұрату",
       pageTitle: "Gerflor еден жабындарының каталогы",
       pageText:
-        "Спорт, білім, денсаулық сақтау және коммерцияға арналған желілер. Taraflex Evolution, Performance және Comfort бағалары — нысан есебінің бағдары; нақты смета алаңға, негізге және белгілеуге байланысты.",
+        "Taraflex спорт жабындары, Taralay коммерциялық орамдары және Mural Revela қабырға коллекциясы. Evolution, Performance және Comfort бағалары — есеп бағдары; нақты смета алаңға, негізге және белгілеуге байланысты.",
       collections: "Коллекциялар мен тарифтер",
+      filterAll: "Барлығы",
+      sport: "Спорт жабындары",
+      floor: "Еден жабындары",
+      wall: "Қабырға жабындары",
       products: {
-        "heterogeneous-rolls": {
-          title: "Гетерогенді орам жабындары",
+        "taraflex-evolution": {
+          title: "Taraflex Evolution",
           summary:
-            "Мектеп, кеңсе, клиника және ритейлге арналған Taralay және Creation көпқабатты винилі: ағаш пен тас дизайны, тозуға төзімділік және күтімнің қарапайымдылығы.",
-          imageAlt:
-            "Коммерциялық интерьердегі ағаш өрнекті Gerflor гетерогенді орам жабыны",
+            "Орташа деңгейдегі жаттығулар мен жарыстарға арналған базалық спорт сериясы. Қазақстандағы волейбол залдары үшін танымал шешім.",
+          imageAlt: "Gerflor Taraflex Evolution 7.5 мм жабыны",
           specs: [
-            "Жоғары жүктеме (education, healthcare, offices)",
-            "PUR / Easycare қорғаныш қабаты",
-            "Антибактериялық қасиеттер",
+            "Қалыңдығы ~ 7,50 мм",
+            "P1 санаты (25–35%)",
+            "FIVB, залдар мен ареналар",
           ],
-        },
-        taraflex: {
-          title: "Taraflex спорт жабындары",
-          summary:
-            "Залдар, ареналар, мектептер және федерацияларға арналған Taraflex және Powergame+ жүйелері. FIVB сертификаты, амортизация және қауіпсіз ілініс.",
-          imageAlt: "Gerflor Taraflex жабыны бар спорт залы",
-          specs: [
-            "Evolution 7,5 мм · P1 санаты",
-            "Comfort 12,5 мм · P3 санаты",
-            "FIVB / FIBA сертификаты",
-          ],
-          price: "47 500 ₸ / м² бастап",
+          price: "47 500 ₸ / м²",
         },
         "taraflex-performance": {
           title: "Taraflex Performance",
@@ -487,17 +673,215 @@ export const dictionaries: Record<Locale, Dictionary> = {
           ],
           price: "62 500 ₸ / м²",
         },
-        "taraflex-evolution": {
-          title: "Taraflex Evolution",
+        "taraflex-comfort": {
+          title: "Taraflex Comfort",
           summary:
-            "Орташа деңгейдегі жаттығулар мен жарыстарға арналған базалық спорт сериясы. Қазақстандағы волейбол залдары үшін танымал шешім.",
-          imageAlt: "Gerflor Taraflex Evolution 7.5 мм жабыны",
+            "Мектептер, көпфункциялы залдар және буынды қорғау маңызды алаңдар үшін жоғары жайлы спорт жабыны.",
+          imageAlt: "Gerflor Taraflex Comfort спорт жабыны",
           specs: [
-            "Қалыңдығы ~ 7,50 мм",
-            "P1 санаты (25–35%)",
-            "FIVB, залдар мен ареналар",
+            "Қалыңдығы ~ 12,50 мм",
+            "P3 санаты (соққы сіңіру > 45%)",
+            "Білім және әмбебап залдар",
           ],
-          price: "47 500 ₸ / м²",
+          price: "78 000 ₸ / м²",
+        },
+        "taraflex-multi-use": {
+          title: "Taraflex Multi-Use",
+          summary:
+            "Әртүрлі спорт түрлері мен ауыспалы кестесі бар залдарға арналған көпфункциялы Taraflex жабыны.",
+          imageAlt: "Gerflor Taraflex Multi-Use көпфункциялы залы",
+          specs: [
+            "Taraflex желісі",
+            "Әмбебап спорт залдары",
+            "Қазақстанда жеткізу және монтаж",
+          ],
+        },
+        "taraflex-tennis": {
+          title: "Taraflex Tennis",
+          summary:
+            "Теннис корттарына арналған Taraflex: амортизация және тұрақты ойын беті.",
+          imageAlt: "Gerflor Taraflex Tennis теннис корты",
+          specs: [
+            "Теннис корттарына",
+            "Taraflex желісі",
+            "Қазақстанда жеткізу және монтаж",
+          ],
+        },
+        "taraflex-badminton": {
+          title: "Taraflex Badminton",
+          summary:
+            "Бадминтонға арналған Taraflex: ілініс пен жайлылық жаттығу мен матчтар үшін.",
+          imageAlt: "Gerflor Taraflex бадминтон алаңы",
+          specs: [
+            "Бадминтонға",
+            "Taraflex желісі",
+            "Қазақстанда жеткізу және монтаж",
+          ],
+        },
+        "taraflex-futsal": {
+          title: "Taraflex Futsal",
+          summary:
+            "Футзал залдарына арналған Taraflex: тозуға төзімді ойын беті.",
+          imageAlt: "Gerflor Taraflex Futsal залы",
+          specs: [
+            "Футзалға",
+            "Taraflex желісі",
+            "Қазақстанда жеткізу және монтаж",
+          ],
+        },
+        "taraflex-table-tennis": {
+          title: "Taraflex Table Tennis",
+          summary:
+            "Үстел теннисі залдарына арналған Taraflex: тегіс бет және ұзақ жүктемеде жайлылық.",
+          imageAlt: "Gerflor Taraflex үстел теннисі залы",
+          specs: [
+            "Үстел теннисіне",
+            "Taraflex желісі",
+            "Қазақстанда жеткізу және монтаж",
+          ],
+        },
+        "taraflex-surface": {
+          title: "Taraflex Surface",
+          summary:
+            "Роликті коньки және іргелес indoor пәндерге арналған Taraflex Surface.",
+          imageAlt: "Gerflor Taraflex Surface алаңы",
+          specs: [
+            "Роликті конькиге",
+            "Taraflex желісі",
+            "Қазақстанда жеткізу және монтаж",
+          ],
+        },
+        "taraflex-bateco": {
+          title: "Taraflex Bateco",
+          summary:
+            "Қайта өңделген материалдар негізіндегі Taraflex Bateco спорт жабыны.",
+          imageAlt: "Gerflor Taraflex Bateco спорт жабыны",
+          specs: [
+            "Taraflex желісі",
+            "Қайта өңделген материалдар",
+            "Қазақстанда жеткізу және монтаж",
+          ],
+        },
+        "taralay-element-comfort": {
+          title: "Taralay Element Comfort",
+          summary:
+            "Мектеп, кеңсе және қоғамдық интерьерлерге арналған Taralay Comfort орам жабыны, амортизациялық негізімен.",
+          imageAlt: "Gerflor Taralay Element Comfort орам жабыны",
+          specs: [
+            "Коммерциялық интерьерлер",
+            "Comfort сериясы",
+            "Қазақстанда жеткізу және төсеу",
+          ],
+        },
+        "taralay-element-compact": {
+          title: "Taralay Element Compact",
+          summary:
+            "Жоғары өтімді үй-жайларға арналған Taralay Compact орам жабыны.",
+          imageAlt: "Gerflor Taralay Element Compact орам жабыны",
+          specs: [
+            "Жоғары өтімділік",
+            "Compact сериясы",
+            "Қазақстанда жеткізу және төсеу",
+          ],
+        },
+        "taralay-uni-comfort": {
+          title: "Taralay Uni Comfort",
+          summary:
+            "Дәліз, білім және денсаулық сақтауға арналған Taralay Comfort бір түсті коллекциясы.",
+          imageAlt: "Gerflor Taralay Uni Comfort бір түсті жабыны",
+          specs: [
+            "Бір түсті дизайн",
+            "Comfort сериясы",
+            "Қазақстанда жеткізу және төсеу",
+          ],
+        },
+        "taralay-initial-comfort": {
+          title: "Taralay Initial Comfort",
+          summary:
+            "Жүру жайлылығына баса назар аударатын коммерциялық және қоғамдық кеңістіктерге арналған Taralay Initial Comfort.",
+          imageAlt: "Gerflor Taralay Initial Comfort жабыны",
+          specs: [
+            "Коммерциялық кеңістіктер",
+            "Comfort сериясы",
+            "Қазақстанда жеткізу және төсеу",
+          ],
+        },
+        "taralay-impression-comfort": {
+          title: "Taralay Impression Comfort",
+          summary:
+            "Taralay Impression Comfort дизайнерлік коллекциясы: декоративті қабат және жайлы негіз.",
+          imageAlt: "Gerflor Taralay Impression Comfort дизайнерлік жабыны",
+          specs: [
+            "Декоративті дизайндар",
+            "Comfort сериясы",
+            "Қазақстанда жеткізу және төсеу",
+          ],
+        },
+        "taralay-impression-compact": {
+          title: "Taralay Impression Compact",
+          summary:
+            "Коммерциядағы тозуға төзімді декоративті едендерге арналған Taralay Impression Compact.",
+          imageAlt: "Gerflor Taralay Impression Compact жабыны",
+          specs: [
+            "Декоративті дизайндар",
+            "Compact сериясы",
+            "Қазақстанда жеткізу және төсеу",
+          ],
+        },
+        "taralay-impression-hop-compact": {
+          title: "Taralay Impression Hop Compact",
+          summary:
+            "Taralay Impression Hop Compact — Compact желісіндегі декоративті коммерциялық жабын.",
+          imageAlt: "Gerflor Taralay Impression Hop Compact жабыны",
+          specs: [
+            "Impression Hop коллекциясы",
+            "Compact сериясы",
+            "Қазақстанда жеткізу және төсеу",
+          ],
+        },
+        "taralay-premium-comfort": {
+          title: "Taralay Premium Comfort",
+          summary:
+            "Өкілдік және қоғамдық интерьерлерге арналған Taralay Comfort премиум коллекциясы.",
+          imageAlt: "Gerflor Taralay Premium Comfort жабыны",
+          specs: [
+            "Taralay премиум желісі",
+            "Comfort сериясы",
+            "Қазақстанда жеткізу және төсеу",
+          ],
+        },
+        "taralay-premium-compact": {
+          title: "Taralay Premium Compact",
+          summary:
+            "Жоғары жүктемелі коммерциялық едендерге арналған Taralay Compact премиум коллекциясы.",
+          imageAlt: "Gerflor Taralay Premium Compact жабыны",
+          specs: [
+            "Taralay премиум желісі",
+            "Compact сериясы",
+            "Қазақстанда жеткізу және төсеу",
+          ],
+        },
+        "taralay-libertex": {
+          title: "Taralay Libertex",
+          summary:
+            "Денсаулық сақтау және қоғамдық аймақтарға арналған антибактериялық Taralay Libertex.",
+          imageAlt: "Gerflor Taralay Libertex жабыны",
+          specs: [
+            "Антибактериялық қасиеттер",
+            "Taralay желісі",
+            "Қазақстанда жеткізу және төсеу",
+          ],
+        },
+        "mural-revela": {
+          title: "Mural Revela",
+          summary:
+            "Gerflor Mural Revela қабырға плиткалары: қоғамдық және коммерциялық интерьерлерге арналған отқа төзімді шешім.",
+          imageAlt: "Gerflor Mural Revela қабырға плиткалары",
+          specs: [
+            "Қабырға жабындары",
+            "Отқа төзімді плиткалар",
+            "Қазақстанда жеткізу және монтаж",
+          ],
         },
       },
     },
@@ -699,31 +1083,24 @@ export const dictionaries: Record<Locale, Dictionary> = {
       request: "Request a quote",
       pageTitle: "Gerflor floor coverings catalog",
       pageText:
-        "Ranges for sport, education, healthcare and commercial interiors. Prices for Taraflex Evolution, Performance and Comfort are a guide for project costing; the final estimate depends on area, subfloor and marking.",
+        "Taraflex sports flooring, Taralay commercial sheet ranges and the Mural Revela wall collection. Prices for Evolution, Performance and Comfort are a costing guide; the final estimate depends on area, subfloor and marking.",
       collections: "Collections and rates",
+      filterAll: "All",
+      sport: "Sports flooring",
+      floor: "Floor coverings",
+      wall: "Wall coverings",
       products: {
-        "heterogeneous-rolls": {
-          title: "Heterogeneous sheet flooring",
+        "taraflex-evolution": {
+          title: "Taraflex Evolution",
           summary:
-            "Multi-layer Taralay and Creation vinyl for schools, offices, clinics and retail: wood and stone designs, wear resistance and easy care.",
-          imageAlt: "Gerflor heterogeneous wood-look sheet flooring in a commercial interior",
+            "Core sports series for training and mid-level competition. A popular choice for volleyball halls in Kazakhstan.",
+          imageAlt: "Gerflor Taraflex Evolution 7.5 mm flooring",
           specs: [
-            "High traffic (education, healthcare, offices)",
-            "PUR / Easycare wear layer",
-            "Antibacterial properties",
+            "Thickness ~ 7.50 mm",
+            "Category P1 (25–35%)",
+            "FIVB, halls and arenas",
           ],
-        },
-        taraflex: {
-          title: "Taraflex sports flooring",
-          summary:
-            "Taraflex and Powergame+ systems for halls, arenas, schools and federations. FIVB certification, shock absorption and safe grip.",
-          imageAlt: "Sports hall with Gerflor Taraflex flooring",
-          specs: [
-            "Evolution 7.5 mm · category P1",
-            "Comfort 12.5 mm · category P3",
-            "FIVB / FIBA certification",
-          ],
-          price: "from 47,500 ₸ / m²",
+          price: "47,500 ₸ / m²",
         },
         "taraflex-performance": {
           title: "Taraflex Performance",
@@ -737,17 +1114,215 @@ export const dictionaries: Record<Locale, Dictionary> = {
           ],
           price: "62,500 ₸ / m²",
         },
-        "taraflex-evolution": {
-          title: "Taraflex Evolution",
+        "taraflex-comfort": {
+          title: "Taraflex Comfort",
           summary:
-            "Core sports series for training and mid-level competition. A popular choice for volleyball halls in Kazakhstan.",
-          imageAlt: "Gerflor Taraflex Evolution 7.5 mm flooring",
+            "Higher-comfort sports flooring for schools, multi-use halls and courts where joint protection matters.",
+          imageAlt: "Gerflor Taraflex Comfort sports flooring",
           specs: [
-            "Thickness ~ 7.50 mm",
-            "Category P1 (25–35%)",
-            "FIVB, halls and arenas",
+            "Thickness ~ 12.50 mm",
+            "Category P3 (shock absorption > 45%)",
+            "Education and multi-use halls",
           ],
-          price: "47,500 ₸ / m²",
+          price: "78,000 ₸ / m²",
+        },
+        "taraflex-multi-use": {
+          title: "Taraflex Multi-Use",
+          summary:
+            "Multi-use Taraflex sports flooring for halls that host several sports on a shared timetable.",
+          imageAlt: "Multi-use hall with Gerflor Taraflex Multi-Use",
+          specs: [
+            "Taraflex range",
+            "Multi-use sports halls",
+            "Supply and installation in Kazakhstan",
+          ],
+        },
+        "taraflex-tennis": {
+          title: "Taraflex Tennis",
+          summary:
+            "Taraflex sports flooring for tennis courts: shock absorption and a stable playing surface.",
+          imageAlt: "Tennis court with Gerflor Taraflex Tennis",
+          specs: [
+            "For tennis courts",
+            "Taraflex range",
+            "Supply and installation in Kazakhstan",
+          ],
+        },
+        "taraflex-badminton": {
+          title: "Taraflex Badminton",
+          summary:
+            "Taraflex flooring for badminton: grip and comfort for training and matches.",
+          imageAlt: "Badminton court with Gerflor Taraflex",
+          specs: [
+            "For badminton",
+            "Taraflex range",
+            "Supply and installation in Kazakhstan",
+          ],
+        },
+        "taraflex-futsal": {
+          title: "Taraflex Futsal",
+          summary:
+            "Taraflex sports flooring for futsal halls: a durable indoor playing surface.",
+          imageAlt: "Futsal hall with Gerflor Taraflex Futsal",
+          specs: [
+            "For futsal",
+            "Taraflex range",
+            "Supply and installation in Kazakhstan",
+          ],
+        },
+        "taraflex-table-tennis": {
+          title: "Taraflex Table Tennis",
+          summary:
+            "Taraflex flooring for table tennis halls: an even surface and comfort under long sessions.",
+          imageAlt: "Table tennis hall with Gerflor Taraflex",
+          specs: [
+            "For table tennis",
+            "Taraflex range",
+            "Supply and installation in Kazakhstan",
+          ],
+        },
+        "taraflex-surface": {
+          title: "Taraflex Surface",
+          summary:
+            "Taraflex Surface sports flooring for roller skating and related indoor disciplines.",
+          imageAlt: "Indoor court with Gerflor Taraflex Surface",
+          specs: [
+            "For roller skating",
+            "Taraflex range",
+            "Supply and installation in Kazakhstan",
+          ],
+        },
+        "taraflex-bateco": {
+          title: "Taraflex Bateco",
+          summary:
+            "Taraflex Bateco sports flooring based on recycled materials in the Gerflor range.",
+          imageAlt: "Gerflor Taraflex Bateco sports flooring",
+          specs: [
+            "Taraflex range",
+            "Recycled materials",
+            "Supply and installation in Kazakhstan",
+          ],
+        },
+        "taralay-element-comfort": {
+          title: "Taralay Element Comfort",
+          summary:
+            "Taralay Comfort heterogeneous sheet flooring for schools, offices and public interiors, with a cushioned backing.",
+          imageAlt: "Gerflor Taralay Element Comfort sheet flooring",
+          specs: [
+            "Commercial interiors",
+            "Comfort series",
+            "Supply and installation in Kazakhstan",
+          ],
+        },
+        "taralay-element-compact": {
+          title: "Taralay Element Compact",
+          summary:
+            "Taralay Compact heterogeneous sheet flooring for high-traffic rooms.",
+          imageAlt: "Gerflor Taralay Element Compact sheet flooring",
+          specs: [
+            "High traffic",
+            "Compact series",
+            "Supply and installation in Kazakhstan",
+          ],
+        },
+        "taralay-uni-comfort": {
+          title: "Taralay Uni Comfort",
+          summary:
+            "Plain-colour Taralay Comfort collection for corridors, education and healthcare.",
+          imageAlt: "Gerflor Taralay Uni Comfort plain flooring",
+          specs: [
+            "Plain-colour design",
+            "Comfort series",
+            "Supply and installation in Kazakhstan",
+          ],
+        },
+        "taralay-initial-comfort": {
+          title: "Taralay Initial Comfort",
+          summary:
+            "Taralay Initial Comfort for commercial and public spaces, with an emphasis on walking comfort.",
+          imageAlt: "Gerflor Taralay Initial Comfort flooring",
+          specs: [
+            "Commercial spaces",
+            "Comfort series",
+            "Supply and installation in Kazakhstan",
+          ],
+        },
+        "taralay-impression-comfort": {
+          title: "Taralay Impression Comfort",
+          summary:
+            "Taralay Impression Comfort design collection: a decorative wear layer on a comfort backing.",
+          imageAlt: "Gerflor Taralay Impression Comfort design flooring",
+          specs: [
+            "Decorative designs",
+            "Comfort series",
+            "Supply and installation in Kazakhstan",
+          ],
+        },
+        "taralay-impression-compact": {
+          title: "Taralay Impression Compact",
+          summary:
+            "Taralay Impression Compact for wear-resistant decorative floors in commercial interiors.",
+          imageAlt: "Gerflor Taralay Impression Compact flooring",
+          specs: [
+            "Decorative designs",
+            "Compact series",
+            "Supply and installation in Kazakhstan",
+          ],
+        },
+        "taralay-impression-hop-compact": {
+          title: "Taralay Impression Hop Compact",
+          summary:
+            "Taralay Impression Hop Compact — a decorative commercial floor in the Compact series.",
+          imageAlt: "Gerflor Taralay Impression Hop Compact flooring",
+          specs: [
+            "Impression Hop collection",
+            "Compact series",
+            "Supply and installation in Kazakhstan",
+          ],
+        },
+        "taralay-premium-comfort": {
+          title: "Taralay Premium Comfort",
+          summary:
+            "Premium Taralay Comfort collection for representative and public interiors.",
+          imageAlt: "Gerflor Taralay Premium Comfort flooring",
+          specs: [
+            "Premium Taralay range",
+            "Comfort series",
+            "Supply and installation in Kazakhstan",
+          ],
+        },
+        "taralay-premium-compact": {
+          title: "Taralay Premium Compact",
+          summary:
+            "Premium Taralay Compact collection for high-load commercial floors.",
+          imageAlt: "Gerflor Taralay Premium Compact flooring",
+          specs: [
+            "Premium Taralay range",
+            "Compact series",
+            "Supply and installation in Kazakhstan",
+          ],
+        },
+        "taralay-libertex": {
+          title: "Taralay Libertex",
+          summary:
+            "Taralay Libertex heterogeneous flooring with antibacterial properties for healthcare and public areas.",
+          imageAlt: "Gerflor Taralay Libertex flooring",
+          specs: [
+            "Antibacterial properties",
+            "Taralay range",
+            "Supply and installation in Kazakhstan",
+          ],
+        },
+        "mural-revela": {
+          title: "Mural Revela",
+          summary:
+            "Gerflor Mural Revela wall tiles: a fire-resistant wall solution for public and commercial interiors.",
+          imageAlt: "Gerflor Mural Revela wall tiles",
+          specs: [
+            "Wall coverings",
+            "Fire-resistant tiles",
+            "Supply and installation in Kazakhstan",
+          ],
         },
       },
     },

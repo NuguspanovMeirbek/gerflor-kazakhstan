@@ -5,7 +5,7 @@ import CatalogIntro from "@/components/pages/CatalogIntro";
 export const metadata: Metadata = {
   title: "Каталог покрытий Gerflor и Taraflex",
   description:
-    "Гетерогенные рулонные покрытия, спортивные системы Taraflex и Taraflex Performance — прямые поставки в Казахстане.",
+    "Спортивные покрытия Taraflex, коммерческие рулоны Taralay и настенная коллекция Mural Revela — прямые поставки в Казахстане.",
 };
 
 export default function CatalogPage() {

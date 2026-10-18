@@ -1,9 +1,13 @@
 "use client";
 
+import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { catalogProducts } from "@/lib/data";
+import {
+  catalogProducts,
+  type CatalogCategory,
+} from "@/lib/catalog/products";
 import { useI18n } from "@/lib/i18n/context";
 import { whatsappQuoteLink } from "@/lib/site";
 
@@ -12,10 +16,30 @@ type CatalogProps = {
   compact?: boolean;
 };
 
+const FILTERS: Array<"all" | CatalogCategory> = [
+  "all",
+  "sport",
+  "floor",
+  "wall",
+];
+
 export default function Catalog({ heading, compact = false }: CatalogProps) {
   const { t } = useI18n();
-  const items = compact ? catalogProducts.slice(0, 3) : catalogProducts;
+  const [filter, setFilter] = useState<"all" | CatalogCategory>("all");
   const quoteHref = whatsappQuoteLink(t.wa.quote);
+
+  const items = useMemo(() => {
+    if (compact) {
+      return catalogProducts.filter((product) => product.featured);
+    }
+    if (filter === "all") return catalogProducts;
+    return catalogProducts.filter((product) => product.category === filter);
+  }, [compact, filter]);
+
+  const filterLabel = (key: (typeof FILTERS)[number]) => {
+    if (key === "all") return t.catalog.filterAll;
+    return t.catalog[key];
+  };
 
   return (
     <section className="section" id="catalog">
@@ -39,11 +63,34 @@ export default function Catalog({ heading, compact = false }: CatalogProps) {
           ) : null}
         </div>
 
+        {compact ? null : (
+          <div className="mt-8 flex flex-wrap gap-2">
+            {FILTERS.map((key) => {
+              const active = filter === key;
+              return (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => setFilter(key)}
+                  className={`tap-target rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+                    active
+                      ? "bg-gerflor-navy text-white"
+                      : "border border-slate-200 bg-white text-gerflor-navy hover:border-gerflor-navy"
+                  }`}
+                >
+                  {filterLabel(key)}
+                </button>
+              );
+            })}
+          </div>
+        )}
+
         <div
           className={`mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 ${compact ? "" : "xl:grid-cols-4"}`}
         >
           {items.map((product, index) => {
             const copy = t.catalog.products[product.id];
+            if (!copy) return null;
             return (
               <motion.article
                 key={product.id}
@@ -51,7 +98,7 @@ export default function Catalog({ heading, compact = false }: CatalogProps) {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.4, delay: index * 0.06 }}
+                transition={{ duration: 0.4, delay: index * 0.04 }}
                 className="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
               >
                 <div className="relative aspect-[4/3] bg-slate-100">
@@ -64,7 +111,10 @@ export default function Catalog({ heading, compact = false }: CatalogProps) {
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
-                  <h3 className="text-lg font-semibold text-gerflor-navy">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-gerflor-accent">
+                    {t.catalog[product.category]}
+                  </p>
+                  <h3 className="mt-1 text-lg font-semibold text-gerflor-navy">
                     {copy.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-slate-600">
@@ -83,6 +133,7 @@ export default function Catalog({ heading, compact = false }: CatalogProps) {
                       {copy.price}
                     </p>
                   ) : null}
+                  <div className="flex-1" />
                   <a
                     href={quoteHref}
                     target="_blank"

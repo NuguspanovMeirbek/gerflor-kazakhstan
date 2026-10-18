@@ -2,28 +2,7 @@ import { asset } from "@/lib/asset";
 
 export const featureIds = ["france", "service", "commission", "warranty"] as const;
 
-export const catalogProducts = [
-  {
-    id: "heterogeneous-rolls",
-    image: asset("/images/product-wood.png"),
-    href: "/catalog#heterogeneous-rolls",
-  },
-  {
-    id: "taraflex",
-    image: asset("/images/gallery-volley2.jpg"),
-    href: "/catalog#taraflex",
-  },
-  {
-    id: "taraflex-performance",
-    image: asset("/images/product-per.jpg"),
-    href: "/catalog#taraflex-performance",
-  },
-  {
-    id: "taraflex-evolution",
-    image: asset("/images/product-25736.jpg"),
-    href: "/catalog#taraflex-evolution",
-  },
-] as const;
+export { catalogProducts } from "@/lib/catalog/products";
 
 export const galleryProjects = [
   { id: "zhayik", image: asset("/images/gallery-zhayik.webp") },

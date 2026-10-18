@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Phone } from "lucide-react";
+import { Instagram, MapPin, Phone } from "lucide-react";
 import { NAV_ITEMS, SITE } from "@/lib/site";
 
 export default function Footer() {
@@ -47,6 +47,15 @@ export default function Footer() {
             <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
             {SITE.address}
           </p>
+          <a
+            href={SITE.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="tap-target mt-4 justify-start gap-2 rounded-full bg-[#E4405F] px-4 text-sm font-semibold text-white hover:bg-[#d63a56]"
+          >
+            <Instagram className="h-4 w-4" aria-hidden />
+            Instagram
+          </a>
         </div>
       </div>
       <div className="relative z-10 border-t border-white/10">

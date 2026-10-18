@@ -12,7 +12,7 @@ export const SITE = {
   address: "г. Астана, пр. Кабанбай Батыр, 60А/5",
   email: "info@gerflor.kz",
   url: "https://gerflor.kz",
-  instagram: "https://www.instagram.com/",
+  instagram: "https://www.instagram.com/gerflorkaz",
   whatsapp: "https://wa.me/77762077776",
   whatsappQuote: `https://wa.me/77762077776?text=${encodeURIComponent("Здравствуйте! Хочу рассчитать проект покрытия Gerflor.")}`,
 } as const;

@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, Phone, X } from "lucide-react";
+import { Instagram, Menu, Phone, X } from "lucide-react";
 import { asset } from "@/lib/asset";
 import { NAV_ITEMS, SITE } from "@/lib/site";
 
@@ -69,6 +69,16 @@ export default function Header() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <a
+            href={SITE.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="tap-target gap-2 rounded-full border border-slate-200 px-3 text-sm font-semibold text-gerflor-navy transition-colors hover:border-[#E4405F] hover:text-[#E4405F]"
+            aria-label="Instagram Gerflor Kazakhstan"
+          >
+            <Instagram className="h-4 w-4" aria-hidden />
+            Instagram
+          </a>
+          <a
             href={SITE.phoneHref}
             className="tap-target gap-2 rounded-full px-2 text-sm font-semibold text-gerflor-navy transition-colors hover:text-gerflor-accent"
           >
@@ -129,8 +139,18 @@ export default function Header() {
                 ))}
               </nav>
               <a
+                href={SITE.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tap-target mt-6 justify-start gap-2 rounded-xl bg-[#E4405F] px-3 text-base font-semibold text-white"
+                onClick={() => setOpen(false)}
+              >
+                <Instagram className="h-5 w-5" aria-hidden />
+                Instagram
+              </a>
+              <a
                 href={SITE.phoneHref}
-                className="tap-target mt-6 justify-start gap-2 rounded-xl bg-surface px-3 text-base font-semibold text-gerflor-navy"
+                className="tap-target mt-3 justify-start gap-2 rounded-xl bg-surface px-3 text-base font-semibold text-gerflor-navy"
               >
                 <Phone className="h-5 w-5" aria-hidden />
                 {SITE.phoneDisplay}

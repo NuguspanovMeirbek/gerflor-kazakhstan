@@ -14,6 +14,7 @@ export default function JsonLd() {
       addressCountry: "KZ",
     },
     url: SITE.url,
+    sameAs: [SITE.instagram],
     areaServed: "KZ",
     brand: { "@type": "Brand", name: "Gerflor" },
   };

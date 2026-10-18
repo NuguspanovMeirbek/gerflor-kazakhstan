@@ -1,0 +1,7 @@
+node_modules
+.next
+out/**/*.txt
+.DS_Store
+*.log
+.env*.local
+next-env.d.ts

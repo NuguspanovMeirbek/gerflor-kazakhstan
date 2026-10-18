@@ -230,7 +230,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Ударопоглощение категории P2",
             "Клубы, турниры, высокие нагрузки",
           ],
-          price: "62 500 ₸ / м²",
+          price: "39 900 ₸ / м²",
         },
         "taraflex-comfort": {
           title: "Taraflex Comfort",
@@ -242,7 +242,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Категория P3 (ударопоглощение > 45%)",
             "Образование и универсальные залы",
           ],
-          price: "78 000 ₸ / м²",
+          price: "44 000 ₸ / м²",
         },
         "taraflex-multi-use": {
           title: "Taraflex Multi-Use",
@@ -671,7 +671,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "P2 санатындағы соққы сіңіру",
             "Клубтар, турнирлер, жоғары жүктеме",
           ],
-          price: "62 500 ₸ / м²",
+          price: "39 900 ₸ / м²",
         },
         "taraflex-comfort": {
           title: "Taraflex Comfort",
@@ -683,7 +683,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "P3 санаты (соққы сіңіру > 45%)",
             "Білім және әмбебап залдар",
           ],
-          price: "78 000 ₸ / м²",
+          price: "44 000 ₸ / м²",
         },
         "taraflex-multi-use": {
           title: "Taraflex Multi-Use",
@@ -1112,7 +1112,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Category P2 shock absorption",
             "Clubs, tournaments, high loads",
           ],
-          price: "62,500 ₸ / m²",
+          price: "39,900 ₸ / m²",
         },
         "taraflex-comfort": {
           title: "Taraflex Comfort",
@@ -1124,7 +1124,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Category P3 (shock absorption > 45%)",
             "Education and multi-use halls",
           ],
-          price: "78,000 ₸ / m²",
+          price: "44,000 ₸ / m²",
         },
         "taraflex-multi-use": {
           title: "Taraflex Multi-Use",

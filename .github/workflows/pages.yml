@@ -17,8 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_PAGES: "1"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -29,6 +27,7 @@ jobs:
       - run: npm run build
       - run: |
           touch out/.nojekyll
+          printf 'gerflor.kz\n' > out/CNAME
           if [ -f out/404/index.html ] && [ ! -f out/404.html ]; then
             cp out/404/index.html out/404.html
           fi

@@ -19,7 +19,7 @@ export default function About() {
           className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-slate-100"
         >
           <Image
-            src={asset("/images/hero-hall.webp")}
+            src={asset("/images/about-flooring.jpg")}
             alt={t.about.imageAlt}
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"

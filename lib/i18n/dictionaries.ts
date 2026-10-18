@@ -163,7 +163,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "профессиональный подбор, монтаж и обслуживание;",
         "решения под любой объект — от спортивного комплекса до офиса.",
       ],
-      imageAlt: "Спортивный зал Gerflor в Казахстане",
+      imageAlt: "Напольные покрытия Gerflor под дерево и камень",
     },
     features: {
       eyebrow: "Почему Gerflor",
@@ -400,7 +400,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "кәсіби іріктеу, монтаждау және қызмет көрсету;",
         "кез келген нысанға арналған шешімдер — спорт кешенінен кеңсеге дейін.",
       ],
-      imageAlt: "Қазақстандағы Gerflor спорт залы",
+      imageAlt: "Gerflor еден жабындары: ағаш және тас декоры",
     },
     features: {
       eyebrow: "Неге Gerflor",
@@ -637,7 +637,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "professional specification, installation and aftercare;",
         "solutions for any facility — from a sports complex to an office.",
       ],
-      imageAlt: "Gerflor sports hall in Kazakhstan",
+      imageAlt: "Gerflor wood- and stone-look flooring planks",
     },
     features: {
       eyebrow: "Why Gerflor",

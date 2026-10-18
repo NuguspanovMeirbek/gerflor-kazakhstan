@@ -218,7 +218,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Категория P1 (25–35%)",
             "FIVB, залы и арены",
           ],
-          price: "47 500 ₸ / м²",
+          price: "34 500 ₸ / м²",
         },
         "taraflex-performance": {
           title: "Taraflex Performance",
@@ -659,7 +659,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "P1 санаты (25–35%)",
             "FIVB, залдар мен ареналар",
           ],
-          price: "47 500 ₸ / м²",
+          price: "34 500 ₸ / м²",
         },
         "taraflex-performance": {
           title: "Taraflex Performance",
@@ -1100,7 +1100,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Category P1 (25–35%)",
             "FIVB, halls and arenas",
           ],
-          price: "47,500 ₸ / m²",
+          price: "34,500 ₸ / m²",
         },
         "taraflex-performance": {
           title: "Taraflex Performance",

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { asset } from "@/lib/asset";
 import { SITE } from "@/lib/site";
 
 export default function Hero() {
@@ -12,7 +13,7 @@ export default function Hero() {
       <div className="container-site grid grid-cols-1 items-center gap-8 py-10 lg:grid-cols-2 lg:gap-16 lg:py-16">
         <div className="relative order-2 aspect-[16/9] w-full overflow-hidden sm:aspect-[16/10] lg:order-1 lg:aspect-auto lg:h-[450px]">
           <Image
-            src="/images/hero-volley.jpg"
+            src={asset("/images/hero-volley.jpg")}
             alt="Профессиональный волейбольный зал на покрытии Gerflor Taraflex"
             fill
             priority

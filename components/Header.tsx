@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Phone, X } from "lucide-react";
+import { asset } from "@/lib/asset";
 import { NAV_ITEMS, SITE } from "@/lib/site";
 
 export default function Header() {
@@ -32,7 +33,7 @@ export default function Header() {
           aria-label="Gerflor Kazakhstan — на главную"
         >
           <Image
-            src="/images/logo-gerflor.png"
+            src={asset("/images/logo-gerflor.png")}
             alt="Логотип Gerflor"
             width={140}
             height={36}

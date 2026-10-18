@@ -1,4 +1,5 @@
 import type { CatalogProduct, FeatureItem, GalleryProject } from "@/types";
+import { asset } from "@/lib/asset";
 
 export const features: FeatureItem[] = [
   {
@@ -33,7 +34,7 @@ export const catalogProducts: CatalogProduct[] = [
     title: "Гетерогенные рулонные покрытия",
     summary:
       "Многослойный винил Taralay и Creation для школ, офисов, клиник и ритейла: дизайн под дерево и камень, износостойкость и простой уход.",
-    image: "/images/product-wood.png",
+    image: asset("/images/product-wood.png"),
     imageAlt:
       "Гетерогенное рулонное покрытие Gerflor под дерево в коммерческом интерьере",
     specs: [
@@ -48,7 +49,7 @@ export const catalogProducts: CatalogProduct[] = [
     title: "Спортивные покрытия Taraflex",
     summary:
       "Системы Taraflex и Powergame+ для залов, арен, школ и федераций. Сертификация FIVB, амортизация и безопасное сцепление.",
-    image: "/images/gallery-volley2.jpg",
+    image: asset("/images/gallery-volley2.jpg"),
     imageAlt: "Спортивный зал с покрытием Gerflor Taraflex",
     specs: [
       "Evolution 7,5 мм · категория P1",
@@ -63,7 +64,7 @@ export const catalogProducts: CatalogProduct[] = [
     title: "Taraflex Performance",
     summary:
       "Профессиональный уровень для клубов и турниров: толщина ~9 мм, категория P2, повышенный комфорт и безопасность спортсменов.",
-    image: "/images/product-per.jpg",
+    image: asset("/images/product-per.jpg"),
     imageAlt: "Спортивное покрытие Gerflor Taraflex Performance",
     specs: [
       "Толщина ~ 9,00 мм",
@@ -78,7 +79,7 @@ export const catalogProducts: CatalogProduct[] = [
     title: "Taraflex Evolution",
     summary:
       "Базовая спортивная серия для тренировок и соревнований среднего уровня. Популярное решение для волейбольных залов Казахстана.",
-    image: "/images/product-25736.jpg",
+    image: asset("/images/product-25736.jpg"),
     imageAlt: "Покрытие Gerflor Taraflex Evolution 7.5 мм",
     specs: [
       "Толщина ~ 7,50 мм",
@@ -97,7 +98,7 @@ export const galleryProjects: GalleryProject[] = [
     city: "Уральск",
     description:
       "Многофункциональный комплекс 2025 года. Главный зал — Taraflex Evolution 7.5 мм, сертификация FIVB.",
-    image: "/images/gallery-img-6853.jpeg",
+    image: asset("/images/gallery-img-6853.jpeg"),
     imageAlt: "Игровой зал Жайык Арены с покрытием Gerflor Taraflex",
   },
   {
@@ -106,7 +107,7 @@ export const galleryProjects: GalleryProject[] = [
     city: "Петропавловск",
     description:
       "Профессиональное покрытие Taraflex Evolution 7.5 мм: амортизация, сцепление и безопасность для всех уровней.",
-    image: "/images/gallery-fbtw3.jpg",
+    image: asset("/images/gallery-fbtw3.jpg"),
     imageAlt: "Спортивный зал ФОК Береке в Петропавловске",
   },
   {
@@ -115,7 +116,7 @@ export const galleryProjects: GalleryProject[] = [
     city: "Талдыкорган",
     description:
       "Главный игровой зал на Taraflex Evolution 7.5 мм — условия для тренировок и матчей высокого уровня.",
-    image: "/images/gallery-fbtw2.jpg",
+    image: asset("/images/gallery-fbtw2.jpg"),
     imageAlt: "Волейбольный центр Жетысу в Талдыкоргане",
   },
   {
@@ -124,7 +125,7 @@ export const galleryProjects: GalleryProject[] = [
     city: "Казахстан",
     description:
       "Taraflex на официальных площадках: баланс амортизации и сцепления для международных комиссий.",
-    image: "/images/hero-volley.jpg",
+    image: asset("/images/hero-volley.jpg"),
     imageAlt: "Волейбольный матч на покрытии Gerflor Taraflex",
   },
   {
@@ -133,7 +134,7 @@ export const galleryProjects: GalleryProject[] = [
     city: "Казахстан",
     description:
       "Taraflex Comfort и коммерческие гетерогенные покрытия для безопасных занятий в школах.",
-    image: "/images/gallery-96787.jpeg",
+    image: asset("/images/gallery-96787.jpeg"),
     imageAlt: "Спортивный школьный зал с покрытием Gerflor",
   },
   {
@@ -142,7 +143,7 @@ export const galleryProjects: GalleryProject[] = [
     city: "Казахстан",
     description:
       "Решения для баскетбола, гандбола, футзала и фитнеса — поставка и монтаж под ключ.",
-    image: "/images/gallery-35786.jpg",
+    image: asset("/images/gallery-35786.jpg"),
     imageAlt: "Многофункциональный спортивный зал Gerflor",
   },
 ];

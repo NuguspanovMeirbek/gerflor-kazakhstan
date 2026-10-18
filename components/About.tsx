@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { asset } from "@/lib/asset";
 
 export default function About() {
   return (
@@ -15,7 +16,7 @@ export default function About() {
           className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-slate-100"
         >
           <Image
-            src="/images/hero-hall.webp"
+            src={asset("/images/hero-hall.webp")}
             alt="Спортивный зал Gerflor в Казахстане"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"

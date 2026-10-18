@@ -15,14 +15,14 @@ export default function Hero() {
     <section className="relative isolate overflow-hidden bg-gerflor-navy">
       <div className="absolute inset-0">
         <Image
-          src={asset("/images/hero-factory.webp")}
+          src={asset("/images/hero-home.jpg")}
           alt={t.hero.imageAlt}
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_36%] sm:object-[center_32%] md:object-[center_30%]"
+          className="object-cover object-[center_62%] sm:object-[center_58%] md:object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-gerflor-navy/55 via-gerflor-navy/25 to-transparent md:from-gerflor-navy/45 md:via-gerflor-navy/15 md:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-gerflor-navy/60 via-gerflor-navy/30 to-gerflor-navy/10 md:from-gerflor-navy/50 md:via-gerflor-navy/18 md:to-transparent" />
       </div>
 
       <div className="container-site relative z-10 flex min-h-[70vh] items-end py-12 sm:min-h-[78vh] md:items-center md:py-20 lg:min-h-[82vh]">

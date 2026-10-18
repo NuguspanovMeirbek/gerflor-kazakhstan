@@ -152,7 +152,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       title: "Спортивные пространства Gerflor «под ключ» в Казахстане",
       text: "Прямые поставки французских покрытий и монтаж по стандартам завода — от проектирования до сдачи объекта технадзору и международным комиссиям.",
       catalog: "Смотреть каталог",
-      imageAlt: "Завод Gerflor",
+      imageAlt: "Сидячий волейбол на покрытии Gerflor Taraflex",
     },
     about: {
       eyebrow: "О компании",
@@ -389,7 +389,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       title: "Gerflor спорт кеңістіктері Қазақстанда «кілтпен»",
       text: "Француз жабындарын тікелей жеткізу және зауыт стандарттары бойынша монтаждау — жобалаудан технадзор мен халықаралық комиссияларға тапсыруға дейін.",
       catalog: "Каталогты қарау",
-      imageAlt: "Gerflor зауыты",
+      imageAlt: "Gerflor Taraflex жабынындағы отырып ойнайтын волейбол",
     },
     about: {
       eyebrow: "Компания туралы",
@@ -626,7 +626,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       title: "Turnkey Gerflor sports spaces in Kazakhstan",
       text: "Direct supply of French floor coverings and factory-standard installation — from design through handover to technical supervision and international commissions.",
       catalog: "View catalog",
-      imageAlt: "Gerflor factory",
+      imageAlt: "Sitting volleyball on Gerflor Taraflex flooring",
     },
     about: {
       eyebrow: "About the company",

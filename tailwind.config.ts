@@ -17,7 +17,7 @@ const config: Config = {
         ink: "rgb(var(--gf-ink) / <alpha-value>)",
       },
       fontFamily: {
-        sans: ["var(--font-manrope)", "Manrope", "system-ui", "sans-serif"],
+        sans: ["var(--font-golos)", "Golos Text", "system-ui", "sans-serif"],
       },
       maxWidth: {
         "7xl": "80rem",

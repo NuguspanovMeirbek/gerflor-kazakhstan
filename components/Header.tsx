@@ -14,7 +14,8 @@ import { SITE, whatsappQuoteLink } from "@/lib/site";
 
 export default function Header() {
   const pathname = usePathname();
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const compactChrome = locale !== "en";
   const [open, setOpen] = useState(false);
   const quoteHref = whatsappQuoteLink(t.wa.quote);
 
@@ -50,7 +51,7 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label={t.nav.mainAria}>
+        <nav className="hidden items-center gap-0.5 lg:flex" aria-label={t.nav.mainAria}>
           {NAV_HREFS.map((item) => {
             const active =
               item.href === "/"
@@ -60,7 +61,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`tap-target rounded-full px-3 text-sm font-medium transition-colors ${
+                className={`tap-target whitespace-nowrap rounded-full px-2.5 text-sm font-medium transition-colors ${
                   active
                     ? "bg-slate-100 text-gerflor-navy"
                     : "text-slate-600 hover:bg-slate-50 hover:text-gerflor-navy"
@@ -72,23 +73,23 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden min-w-0 flex-nowrap items-center gap-2 lg:flex">
           <LanguageSwitcher />
           <a
             href={SITE.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="tap-target gap-2 rounded-full border border-slate-200 px-3 text-sm font-semibold text-gerflor-navy transition-colors hover:border-[#E4405F] hover:text-[#E4405F]"
+            className="tap-target shrink-0 gap-2 rounded-full border border-slate-200 px-3 text-sm font-semibold text-gerflor-navy transition-colors hover:border-[#E4405F] hover:text-[#E4405F]"
             aria-label={t.header.instagramAria}
           >
             <Instagram className="h-4 w-4" aria-hidden />
-            {t.header.instagram}
+            {compactChrome ? null : t.header.instagram}
           </a>
           <a
             href={SITE.phoneHref}
-            className="tap-target gap-2 rounded-full px-2 text-sm font-semibold text-gerflor-navy transition-colors hover:text-gerflor-accent"
+            className="tap-target shrink-0 gap-2 whitespace-nowrap rounded-full px-2 text-sm font-semibold tabular-nums text-gerflor-navy transition-colors hover:text-gerflor-accent"
           >
-            <Phone className="h-4 w-4" aria-hidden />
+            <Phone className="h-4 w-4 shrink-0" aria-hidden />
             {SITE.phoneDisplay}
           </a>
           <a
@@ -160,9 +161,9 @@ export default function Header() {
               </a>
               <a
                 href={SITE.phoneHref}
-                className="tap-target mt-3 justify-start gap-2 rounded-xl bg-surface px-3 text-base font-semibold text-gerflor-navy"
+                className="tap-target mt-3 justify-start gap-2 whitespace-nowrap rounded-xl bg-surface px-3 text-base font-semibold tabular-nums text-gerflor-navy"
               >
-                <Phone className="h-5 w-5" aria-hidden />
+                <Phone className="h-5 w-5 shrink-0" aria-hidden />
                 {SITE.phoneDisplay}
               </a>
               <a

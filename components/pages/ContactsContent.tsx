@@ -16,9 +16,9 @@ export default function ContactsContent() {
         <p className="mt-4 text-slate-600">{t.contacts.intro}</p>
         <a
           href={SITE.phoneHref}
-          className="tap-target mt-6 justify-start gap-2 text-lg font-semibold text-gerflor-navy"
+          className="tap-target mt-6 justify-start gap-2 whitespace-nowrap text-lg font-semibold tabular-nums text-gerflor-navy"
         >
-          <Phone className="h-5 w-5" aria-hidden />
+          <Phone className="h-5 w-5 shrink-0" aria-hidden />
           {SITE.phoneDisplay}
         </a>
         <p className="mt-4 flex items-start gap-2 text-slate-700">

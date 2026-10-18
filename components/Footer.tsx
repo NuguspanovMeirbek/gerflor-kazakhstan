@@ -43,9 +43,9 @@ export default function Footer() {
           </p>
           <a
             href={SITE.phoneHref}
-            className="tap-target mt-3 justify-start gap-2 text-sm font-medium text-white"
+            className="tap-target mt-3 justify-start gap-2 whitespace-nowrap text-sm font-medium tabular-nums text-white"
           >
-            <Phone className="h-4 w-4" aria-hidden />
+            <Phone className="h-4 w-4 shrink-0" aria-hidden />
             {SITE.phoneDisplay}
           </a>
           <p className="mt-3 flex items-start gap-2 text-sm text-white/80">

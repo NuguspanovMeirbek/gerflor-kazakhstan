@@ -26,10 +26,12 @@ export const catalogProducts = [
 ] as const;
 
 export const galleryProjects = [
-  { id: "zhayik", image: asset("/images/gallery-img-6853.jpeg") },
-  { id: "bereke", image: asset("/images/gallery-fbtw3.jpg") },
-  { id: "zhetysu", image: asset("/images/gallery-fbtw2.jpg") },
-  { id: "volley-pro", image: asset("/images/hero-volley.jpg") },
-  { id: "school", image: asset("/images/gallery-96787.jpeg") },
-  { id: "multi", image: asset("/images/gallery-35786.jpg") },
+  { id: "zhayik", image: asset("/images/gallery-zhayik.webp") },
+  { id: "bereke", image: asset("/images/gallery-bereke.jpg") },
+  { id: "zhetysu", image: asset("/images/gallery-zhetysu.jpg") },
+  { id: "abay", image: asset("/images/gallery-abay.webp") },
+  { id: "school", image: asset("/images/gallery-shoqan.jpg") },
+  { id: "multi", image: asset("/images/gallery-boccia.jpg") },
+  { id: "jekpe-jek", image: asset("/images/gallery-jekpe-jek.jpg") },
+  { id: "barys", image: asset("/images/gallery-barys.jpg") },
 ] as const;

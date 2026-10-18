@@ -263,43 +263,57 @@ export const dictionaries: Record<Locale, Dictionary> = {
           title: "Жайык Арена",
           city: "Уральск",
           description:
-            "Многофункциональный комплекс 2025 года. Главный зал — Taraflex Evolution 7.5 мм, сертификация FIVB.",
+            "Многофункциональный комплекс 2025 года. Главный зал — Taraflex Evolution 7.5 мм, сертификация FIVB. Поставка и монтаж под ключ с нанесением разметки для волейбола.",
           imageAlt: "Игровой зал Жайык Арены с покрытием Gerflor Taraflex",
         },
         bereke: {
           title: "ФОК «Береке»",
           city: "Петропавловск",
           description:
-            "Профессиональное покрытие Taraflex Evolution 7.5 мм: амортизация, сцепление и безопасность для всех уровней.",
+            "Профессиональное покрытие Gerflor Taraflex Evolution 7,5 мм — комфорт, амортизация и безопасность в каждой игре. Поставка, монтаж и нанесение волейбольной разметки под ключ.",
           imageAlt: "Спортивный зал ФОК Береке в Петропавловске",
         },
         zhetysu: {
           title: "Волейбольный центр «Жетысу»",
           city: "Талдыкорган",
           description:
-            "Главный игровой зал на Taraflex Evolution 7.5 мм — условия для тренировок и матчей высокого уровня.",
+            "Поставка профессионального спортивного покрытия Gerflor Taraflex для двух площадок нового волейбольного центра «Жетысу».",
           imageAlt: "Волейбольный центр Жетысу в Талдыкоргане",
         },
-        "volley-pro": {
-          title: "Соревновательный волейбол",
-          city: "Казахстан",
+        abay: {
+          title: "Центр «Абай»",
+          city: "Атырау",
           description:
-            "Taraflex на официальных площадках: баланс амортизации и сцепления для международных комиссий.",
-          imageAlt: "Волейбольный матч на покрытии Gerflor Taraflex",
+            "Поставка и монтаж профессионального спортивного покрытия Gerflor с нанесением разметки для параволейбола. Качество, безопасность и комфорт для каждого спортсмена.",
+          imageAlt: "Параволейбол в центре Абай в Атырау на покрытии Gerflor",
         },
         school: {
-          title: "Школы и образовательные залы",
-          city: "Казахстан",
+          title: "Частная школа имени Шокана Уалиханова",
+          city: "Астана",
           description:
-            "Taraflex Comfort и коммерческие гетерогенные покрытия для безопасных занятий в школах.",
-          imageAlt: "Спортивный школьный зал с покрытием Gerflor",
+            "Поставка качественных напольных покрытий Gerflor для создания комфортной, современной и безопасной образовательной среды.",
+          imageAlt: "Частная школа имени Шокана Уалиханова",
         },
         multi: {
-          title: "Многофункциональные арены",
-          city: "Казахстан",
+          title: "Кубок мира по бочча 2026",
+          city: "Астана",
           description:
-            "Решения для баскетбола, гандбола, футзала и фитнеса — поставка и монтаж под ключ.",
-          imageAlt: "Многофункциональный спортивный зал Gerflor",
+            "Поставка и монтаж напольного покрытия Gerflor Taraflex Evolution green mint для Кубка мира по бочча 2026 года.",
+          imageAlt: "Кубок мира по бочча 2026 в Астане на покрытии Gerflor Taraflex",
+        },
+        "jekpe-jek": {
+          title: "Дворец единоборств «Жекпе-Жек»",
+          city: "Астана",
+          description:
+            "Поставка, монтаж и нанесение разметки для волейбола. Финал Кубка РК среди мужских команд, 2025 год.",
+          imageAlt: "Финал Кубка РК по волейболу во дворце единоборств Жекпе-Жек",
+        },
+        barys: {
+          title: "Barys Arena",
+          city: "Астана",
+          description:
+            "Поставка и монтаж профессионального спортивного покрытия Gerflor, нанесение волейбольной разметки для плей-офф Чемпионата Республики Казахстан среди женских команд Национальной лиги — 2026.",
+          imageAlt: "Волейбольная площадка Gerflor на Barys Arena в Астане",
         },
       },
     },
@@ -500,43 +514,57 @@ export const dictionaries: Record<Locale, Dictionary> = {
           title: "Жайық Арена",
           city: "Орал",
           description:
-            "2025 жылғы көпфункционалды кешен. Бас зал — Taraflex Evolution 7.5 мм, FIVB сертификаты.",
+            "2025 жылғы көпфункционалды кешен. Бас зал — Taraflex Evolution 7.5 мм, FIVB сертификаты. Кілтпен жеткізу және монтаждау, волейбол алаңына таңба салумен.",
           imageAlt: "Gerflor Taraflex жабыны бар Жайық Арена ойын залы",
         },
         bereke: {
           title: "«Береке» СӨО",
           city: "Петропавл",
           description:
-            "Кәсіби Taraflex Evolution 7.5 мм жабыны: барлық деңгейге амортизация, ілініс және қауіпсіздік.",
+            "Кәсіби Gerflor Taraflex Evolution 7,5 мм жабыны — әр ойында жайлылық, амортизация және қауіпсіздік. Кілтпен жеткізу, монтаждау және волейбол таңбасын салу.",
           imageAlt: "Петропавлдағы Береке СӨО спорт залы",
         },
         zhetysu: {
           title: "«Жетісу» волейбол орталығы",
           city: "Талдықорған",
           description:
-            "Бас ойын залы Taraflex Evolution 7.5 мм — жоғары деңгейдегі жаттығулар мен матчтарға жағдай.",
+            "Жаңа «Жетісу» волейбол орталығының екі алаңына кәсіби Gerflor Taraflex спорт жабынын жеткізу.",
           imageAlt: "Талдықорғандағы Жетісу волейбол орталығы",
         },
-        "volley-pro": {
-          title: "Жарыс волейболы",
-          city: "Қазақстан",
+        abay: {
+          title: "«Абай» орталығы",
+          city: "Атырау",
           description:
-            "Ресми алаңдардағы Taraflex: халықаралық комиссиялар үшін амортизация мен ілініс теңгерімі.",
-          imageAlt: "Gerflor Taraflex жабынындағы волейбол матчы",
+            "Параволейболға арналған таңбамен Gerflor кәсіби спорт жабынын жеткізу және монтаждау. Әр спортшыға сапа, қауіпсіздік және жайлылық.",
+          imageAlt: "Атыраудағы «Абай» орталығындағы параволейбол, Gerflor жабыны",
         },
         school: {
-          title: "Мектептер мен білім беру залдары",
-          city: "Қазақстан",
+          title: "Шоқан Уәлиханов атындағы жеке мектеп",
+          city: "Астана",
           description:
-            "Мектептегі қауіпсіз сабақтар үшін Taraflex Comfort және коммерциялық гетерогенді жабындар.",
-          imageAlt: "Gerflor жабыны бар мектеп спорт залы",
+            "Жайлы, заманауи және қауіпсіз білім беру ортасын жасау үшін сапалы Gerflor еден жабындарын жеткізу.",
+          imageAlt: "Шоқан Уәлиханов атындағы жеке мектеп",
         },
         multi: {
-          title: "Көпфункционалды ареналар",
-          city: "Қазақстан",
+          title: "Боччадан 2026 жылғы әлем кубогы",
+          city: "Астана",
           description:
-            "Баскетбол, гандбол, футзал және фитнеске арналған шешімдер — кілтпен жеткізу және монтаж.",
-          imageAlt: "Көпфункционалды Gerflor спорт залы",
+            "2026 жылғы бочча әлем кубогына Gerflor Taraflex Evolution green mint еден жабынын жеткізу және монтаждау.",
+          imageAlt: "Астанадағы 2026 жылғы бочча әлем кубогы, Gerflor Taraflex жабыны",
+        },
+        "jekpe-jek": {
+          title: "«Жекпе-Жек» жекпе-жек сарайы",
+          city: "Астана",
+          description:
+            "Волейболға арналған таңбамен жеткізу және монтаждау. Ерлер командалары арасындағы ҚР Кубогының финалы, 2025 жыл.",
+          imageAlt: "Жекпе-Жек сарайындағы ҚР волейбол кубогының финалы",
+        },
+        barys: {
+          title: "Barys Arena",
+          city: "Астана",
+          description:
+            "Gerflor кәсіби спорт жабынын жеткізу және монтаждау, Ұлттық лиганың әйелдер командалары арасындағы Қазақстан Республикасы чемпионатының плей-оффына арналған волейбол таңбасын салу — 2026.",
+          imageAlt: "Астанадағы Barys Arena алаңындағы Gerflor волейбол алаңы",
         },
       },
     },
@@ -736,43 +764,57 @@ export const dictionaries: Record<Locale, Dictionary> = {
           title: "Zhaiyk Arena",
           city: "Oral",
           description:
-            "Multifunctional complex opened in 2025. Main hall — Taraflex Evolution 7.5 mm, FIVB certification.",
+            "Multifunctional complex opened in 2025. Main hall — Taraflex Evolution 7.5 mm, FIVB certification. Turnkey supply and installation with volleyball court marking.",
           imageAlt: "Zhaiyk Arena court with Gerflor Taraflex",
         },
         bereke: {
           title: "Bereke sports complex",
           city: "Petropavl",
           description:
-            "Professional Taraflex Evolution 7.5 mm: shock absorption, grip and safety for all levels.",
+            "Professional Gerflor Taraflex Evolution 7.5 mm — comfort, shock absorption and safety in every game. Turnkey supply, installation and volleyball court marking.",
           imageAlt: "Bereke sports hall in Petropavl",
         },
         zhetysu: {
           title: "Zhetysu volleyball centre",
           city: "Taldykorgan",
           description:
-            "Main court on Taraflex Evolution 7.5 mm — conditions for high-level training and matches.",
+            "Supply of professional Gerflor Taraflex sports flooring for two courts at the new Zhetysu volleyball centre.",
           imageAlt: "Zhetysu volleyball centre in Taldykorgan",
         },
-        "volley-pro": {
-          title: "Competition volleyball",
-          city: "Kazakhstan",
+        abay: {
+          title: "Abai Centre",
+          city: "Atyrau",
           description:
-            "Taraflex on official courts: a balance of shock absorption and grip for international commissions.",
-          imageAlt: "Volleyball match on Gerflor Taraflex",
+            "Supply and installation of professional Gerflor sports flooring with sitting volleyball court marking. Quality, safety and comfort for every athlete.",
+          imageAlt: "Sitting volleyball at Abai Centre in Atyrau on Gerflor flooring",
         },
         school: {
-          title: "Schools and education halls",
-          city: "Kazakhstan",
+          title: "Shoqan Ualikhanov Private School",
+          city: "Astana",
           description:
-            "Taraflex Comfort and commercial heterogeneous flooring for safe PE in schools.",
-          imageAlt: "School sports hall with Gerflor flooring",
+            "Supply of quality Gerflor flooring to create a comfortable, modern and safe educational environment.",
+          imageAlt: "Shoqan Ualikhanov Private School",
         },
         multi: {
-          title: "Multifunctional arenas",
-          city: "Kazakhstan",
+          title: "2026 World Boccia Cup",
+          city: "Astana",
           description:
-            "Solutions for basketball, handball, futsal and fitness — supply and installation turnkey.",
-          imageAlt: "Multifunctional Gerflor sports hall",
+            "Supply and installation of Gerflor Taraflex Evolution green mint flooring for the 2026 World Boccia Cup.",
+          imageAlt: "2026 World Boccia Cup in Astana on Gerflor Taraflex",
+        },
+        "jekpe-jek": {
+          title: "Zhekpe-Zhek Martial Arts Palace",
+          city: "Astana",
+          description:
+            "Supply, installation and volleyball court marking. Final of the Republic of Kazakhstan Cup among men’s teams, 2025.",
+          imageAlt: "Kazakhstan Cup volleyball final at Zhekpe-Zhek Palace",
+        },
+        barys: {
+          title: "Barys Arena",
+          city: "Astana",
+          description:
+            "Supply and installation of professional Gerflor sports flooring and volleyball court marking for the 2026 National League women’s play-offs of the Republic of Kazakhstan Championship.",
+          imageAlt: "Gerflor volleyball court at Barys Arena in Astana",
         },
       },
     },

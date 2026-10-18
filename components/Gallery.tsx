@@ -12,7 +12,7 @@ type GalleryProps = {
 
 export default function Gallery({ compact = false }: GalleryProps) {
   const { t } = useI18n();
-  const items = compact ? galleryProjects.slice(0, 6) : galleryProjects;
+  const items = compact ? galleryProjects.slice(0, 8) : galleryProjects;
 
   return (
     <section className="section bg-surface" id="gallery">

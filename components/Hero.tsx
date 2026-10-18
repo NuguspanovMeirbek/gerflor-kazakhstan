@@ -5,52 +5,53 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { asset } from "@/lib/asset";
-import { SITE } from "@/lib/site";
+import { useI18n } from "@/lib/i18n/context";
+import { whatsappQuoteLink } from "@/lib/site";
 
 export default function Hero() {
-  return (
-    <section className="bg-[#EAE6E3]">
-      <div className="container-site grid grid-cols-1 items-center gap-8 py-10 lg:grid-cols-2 lg:gap-16 lg:py-16">
-        <div className="relative order-2 aspect-[16/9] w-full overflow-hidden sm:aspect-[16/10] lg:order-1 lg:aspect-auto lg:h-[450px]">
-          <Image
-            src={asset("/images/hero-volley.jpg")}
-            alt="Профессиональный волейбольный зал на покрытии Gerflor Taraflex"
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover object-center"
-          />
-        </div>
+  const { t } = useI18n();
 
-        <div className="order-1 max-w-xl lg:order-2 lg:py-4">
+  return (
+    <section className="relative isolate overflow-hidden bg-gerflor-navy">
+      <div className="absolute inset-0">
+        <Image
+          src={asset("/images/hero-factory.webp")}
+          alt={t.hero.imageAlt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_36%] sm:object-[center_32%] md:object-[center_30%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-gerflor-navy/55 via-gerflor-navy/25 to-transparent md:from-gerflor-navy/45 md:via-gerflor-navy/15 md:to-transparent" />
+      </div>
+
+      <div className="container-site relative z-10 flex min-h-[70vh] items-end py-12 sm:min-h-[78vh] md:items-center md:py-20 lg:min-h-[82vh]">
+        <div className="max-w-2xl text-white">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
-            className="text-sm font-semibold uppercase tracking-[0.12em] text-gerflor-navy"
+            className="text-sm font-semibold uppercase tracking-[0.12em] text-white/90"
           >
-            Gerflor Kazakhstan — эксклюзивный представитель и авторизованный
-            сервис
+            {t.hero.eyebrow}
           </motion.p>
 
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.08 }}
-            className="mt-4 text-2xl font-semibold leading-tight tracking-tight text-gerflor-navy sm:text-3xl md:text-4xl lg:text-[2.75rem]"
+            className="mt-4 text-2xl font-semibold leading-tight tracking-tight sm:text-3xl md:text-4xl lg:text-[2.75rem]"
           >
-            Спортивные пространства Gerflor «под ключ» в Казахстане
+            {t.hero.title}
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.16 }}
-            className="mt-5 text-base leading-relaxed text-gerflor-navy/80 md:text-lg"
+            className="mt-5 text-base leading-relaxed text-white/90 md:text-lg"
           >
-            Прямые поставки французских покрытий и монтаж по стандартам завода —
-            от проектирования до сдачи объекта технадзору и международным
-            комиссиям.
+            {t.hero.text}
           </motion.p>
 
           <motion.div
@@ -60,16 +61,19 @@ export default function Hero() {
             className="mt-8 flex w-full flex-col gap-3 sm:flex-row"
           >
             <a
-              href={SITE.whatsappQuote}
+              href={whatsappQuoteLink(t.wa.quote)}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary w-full sm:w-auto"
             >
-              Рассчитать проект
+              {t.header.calculate}
               <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
             </a>
-            <Link href="/catalog" className="btn-outline w-full sm:w-auto">
-              Смотреть каталог
+            <Link
+              href="/catalog"
+              className="tap-target w-full rounded-full border border-white/70 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm hover:bg-white/20 sm:w-auto"
+            >
+              {t.hero.catalog}
             </Link>
           </motion.div>
         </div>

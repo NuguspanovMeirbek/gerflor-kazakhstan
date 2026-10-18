@@ -6,12 +6,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Instagram, Menu, Phone, X } from "lucide-react";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { asset } from "@/lib/asset";
-import { NAV_ITEMS, SITE } from "@/lib/site";
+import { NAV_HREFS } from "@/lib/i18n/dictionaries";
+import { useI18n } from "@/lib/i18n/context";
+import { SITE, whatsappQuoteLink } from "@/lib/site";
 
 export default function Header() {
   const pathname = usePathname();
+  const { t } = useI18n();
   const [open, setOpen] = useState(false);
+  const quoteHref = whatsappQuoteLink(t.wa.quote);
 
   useEffect(() => {
     setOpen(false);
@@ -29,24 +34,24 @@ export default function Header() {
       <div className="container-site flex h-16 items-center justify-between gap-3 lg:h-[72px]">
         <Link
           href="/"
-          className="tap-target flex items-center gap-2.5 rounded-md pr-2"
-          aria-label="Gerflor Kazakhstan — на главную"
+          className="tap-target flex min-w-0 items-center gap-2.5 rounded-md pr-2"
+          aria-label={t.header.homeAria}
         >
           <Image
             src={asset("/images/logo-gerflor.png")}
-            alt="Логотип Gerflor"
+            alt={t.header.logoAlt}
             width={140}
             height={36}
             className="h-8 w-auto lg:h-9"
             priority
           />
           <span className="border-l border-slate-200 pl-2.5 text-xs font-semibold uppercase tracking-wide text-gerflor-navy">
-            Казахстан
+            {t.header.country}
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Основная навигация">
-          {NAV_ITEMS.map((item) => {
+        <nav className="hidden items-center gap-1 lg:flex" aria-label={t.nav.mainAria}>
+          {NAV_HREFS.map((item) => {
             const active =
               item.href === "/"
                 ? pathname === "/"
@@ -61,22 +66,23 @@ export default function Header() {
                     : "text-slate-600 hover:bg-slate-50 hover:text-gerflor-navy"
                 }`}
               >
-                {item.label}
+                {t.nav[item.key]}
               </Link>
             );
           })}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <LanguageSwitcher />
           <a
             href={SITE.instagram}
             target="_blank"
             rel="noopener noreferrer"
             className="tap-target gap-2 rounded-full border border-slate-200 px-3 text-sm font-semibold text-gerflor-navy transition-colors hover:border-[#E4405F] hover:text-[#E4405F]"
-            aria-label="Instagram Gerflor Kazakhstan"
+            aria-label={t.header.instagramAria}
           >
             <Instagram className="h-4 w-4" aria-hidden />
-            Instagram
+            {t.header.instagram}
           </a>
           <a
             href={SITE.phoneHref}
@@ -86,24 +92,27 @@ export default function Header() {
             {SITE.phoneDisplay}
           </a>
           <a
-            href={SITE.whatsappQuote}
+            href={quoteHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary"
+            className="btn-primary whitespace-nowrap"
           >
-            Рассчитать проект
+            {t.header.calculate}
           </a>
         </div>
 
-        <button
-          type="button"
-          className="tap-target rounded-full border border-slate-200 p-2 text-gerflor-navy lg:hidden"
-          aria-label={open ? "Закрыть меню" : "Открыть меню"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <LanguageSwitcher />
+          <button
+            type="button"
+            className="tap-target rounded-full border border-slate-200 p-2 text-gerflor-navy"
+            aria-label={open ? t.header.closeMenu : t.header.openMenu}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -117,7 +126,7 @@ export default function Header() {
             <button
               type="button"
               className="absolute inset-0 bg-gerflor-navy/40"
-              aria-label="Закрыть меню"
+              aria-label={t.header.closeMenu}
               onClick={() => setOpen(false)}
             />
             <motion.aside
@@ -127,14 +136,15 @@ export default function Header() {
               transition={{ type: "tween", duration: 0.28 }}
               className="absolute right-0 top-0 flex h-full w-[min(100%,22rem)] flex-col bg-white px-5 py-6 shadow-2xl"
             >
-              <nav className="flex flex-col gap-1" aria-label="Мобильная навигация">
-                {NAV_ITEMS.map((item) => (
+              <LanguageSwitcher className="mb-4 self-start" />
+              <nav className="flex flex-col gap-1" aria-label={t.nav.mobileAria}>
+                {NAV_HREFS.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     className="tap-target justify-start rounded-xl px-3 text-base font-medium text-ink hover:bg-slate-50"
                   >
-                    {item.label}
+                    {t.nav[item.key]}
                   </Link>
                 ))}
               </nav>
@@ -146,7 +156,7 @@ export default function Header() {
                 onClick={() => setOpen(false)}
               >
                 <Instagram className="h-5 w-5" aria-hidden />
-                Instagram
+                {t.header.instagram}
               </a>
               <a
                 href={SITE.phoneHref}
@@ -156,13 +166,13 @@ export default function Header() {
                 {SITE.phoneDisplay}
               </a>
               <a
-                href={SITE.whatsappQuote}
+                href={quoteHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary mt-4 w-full"
                 onClick={() => setOpen(false)}
               >
-                Рассчитать проект
+                {t.header.calculate}
               </a>
             </motion.aside>
           </motion.div>

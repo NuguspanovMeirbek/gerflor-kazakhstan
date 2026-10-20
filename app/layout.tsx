@@ -41,6 +41,13 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -55,6 +62,9 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="kk" href="https://gerflor.kz/?lang=kk" />
         <link rel="alternate" hrefLang="en" href="https://gerflor.kz/?lang=en" />
         <link rel="alternate" hrefLang="x-default" href="https://gerflor.kz/" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/icon.png" type="image/png" sizes="512x512" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
       </head>
       <body className={`${golos.className} font-sans`}>
         <JsonLd />

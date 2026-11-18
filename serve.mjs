@@ -64,5 +64,5 @@ if (!fs.existsSync(path.join(roots[0], "index.html"))) {
 }
 
 server.listen(port, () => {
-  console.log(`Gerflor Kazakhstan: http://localhost:${port}`);
+  console.log(`Site: http://localhost:${port}`);
 });

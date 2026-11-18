@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
-import Gallery from "@/components/Gallery";
-import GalleryIntro from "@/components/pages/GalleryIntro";
+import MaintenanceScreen from "@/components/MaintenanceScreen";
+import { SITE } from "@/lib/config/site";
 
 export const metadata: Metadata = {
-  title: "Галерея объектов Gerflor в Казахстане",
-  description:
-    "Жайык Арена, ФОК Береке, волейбольный центр Жетысу и другие объекты на покрытиях Taraflex.",
+  title: SITE.description,
+  description: SITE.description,
 };
 
 export default function GalleryPage() {
-  return (
-    <div>
-      <GalleryIntro />
-      <Gallery />
-    </div>
-  );
+  return <MaintenanceScreen />;
 }

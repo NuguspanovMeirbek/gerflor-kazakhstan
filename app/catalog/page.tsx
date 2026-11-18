@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
-import Catalog from "@/components/Catalog";
-import CatalogIntro from "@/components/pages/CatalogIntro";
+import MaintenanceScreen from "@/components/MaintenanceScreen";
+import { SITE } from "@/lib/config/site";
 
 export const metadata: Metadata = {
-  title: "Каталог покрытий Gerflor и Taraflex",
-  description:
-    "Спортивные покрытия Taraflex, коммерческие рулоны Taralay и настенная коллекция Mural Revela — прямые поставки в Казахстане.",
+  title: SITE.description,
+  description: SITE.description,
 };
 
 export default function CatalogPage() {
-  return (
-    <div className="bg-white">
-      <CatalogIntro />
-      <Catalog />
-    </div>
-  );
+  return <MaintenanceScreen />;
 }

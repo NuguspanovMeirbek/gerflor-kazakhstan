@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import ContactsContent from "@/components/pages/ContactsContent";
-import { SITE } from "@/lib/site";
+import MaintenanceScreen from "@/components/MaintenanceScreen";
+import { SITE } from "@/lib/config/site";
 
 export const metadata: Metadata = {
-  title: "Контакты",
-  description: `Gerflor Kazakhstan: ${SITE.phoneDisplay}, ${SITE.address}`,
+  title: SITE.description,
+  description: SITE.description,
 };
 
 export default function ContactsPage() {
-  return <ContactsContent />;
+  return <MaintenanceScreen />;
 }

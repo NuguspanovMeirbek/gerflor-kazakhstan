@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import ServicesContent from "@/components/pages/ServicesContent";
+import MaintenanceScreen from "@/components/MaintenanceScreen";
+import { SITE } from "@/lib/config/site";
 
 export const metadata: Metadata = {
-  title: "Услуги «под ключ»",
-  description:
-    "Проектирование, поставка, монтаж и сдача спортивных покрытий Gerflor технадзору и международным комиссиям.",
+  title: SITE.description,
+  description: SITE.description,
 };
 
 export default function ServicesPage() {
-  return <ServicesContent />;
+  return <MaintenanceScreen />;
 }

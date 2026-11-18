@@ -12,7 +12,7 @@ export default function LanguageSwitcher({ className = "" }: Props) {
 
   return (
     <div
-      className={`inline-flex items-center rounded-full border border-slate-200 bg-white/80 p-0.5 text-xs font-semibold tracking-wide ${className}`}
+      className={`inline-flex items-center rounded-full border border-slate-200 bg-white p-0.5 text-xs font-semibold tracking-wide ${className}`}
       role="group"
       aria-label="Language"
     >
@@ -28,8 +28,8 @@ export default function LanguageSwitcher({ className = "" }: Props) {
             onClick={() => setLocale(code)}
             className={`rounded-full px-2.5 py-1.5 transition-colors ${
               locale === code
-                ? "bg-gerflor-navy text-white"
-                : "text-slate-500 hover:text-gerflor-navy"
+                ? "bg-slate-900 text-white"
+                : "text-slate-500 hover:text-slate-900"
             }`}
             aria-pressed={locale === code}
           >

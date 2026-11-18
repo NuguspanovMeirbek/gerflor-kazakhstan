@@ -8,13 +8,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        gerflor: {
-          navy: "rgb(var(--gf-navy) / <alpha-value>)",
-          accent: "rgb(var(--gf-accent) / <alpha-value>)",
-          teal: "#2A4164",
-        },
-        surface: "rgb(var(--gf-surface) / <alpha-value>)",
-        ink: "rgb(var(--gf-ink) / <alpha-value>)",
+        navy: "rgb(var(--color-navy) / <alpha-value>)",
+        surface: "rgb(var(--color-surface) / <alpha-value>)",
+        ink: "rgb(var(--color-ink) / <alpha-value>)",
       },
       fontFamily: {
         sans: ["var(--font-golos)", "Golos Text", "system-ui", "sans-serif"],

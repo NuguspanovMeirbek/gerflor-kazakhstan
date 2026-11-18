@@ -17,7 +17,7 @@ import {
   type Locale,
 } from "@/lib/i18n/types";
 
-const STORAGE_KEY = "gerflor-locale";
+const STORAGE_KEY = "site-locale";
 
 type I18nContextValue = {
   locale: Locale;
@@ -40,30 +40,12 @@ function readInitialLocale(): Locale {
   return DEFAULT_LOCALE;
 }
 
-function applyDocumentMeta(locale: Locale, pathname: string) {
+function applyDocumentMeta(locale: Locale) {
   const t = dictionaries[locale];
-  let title = t.meta.title;
-  let description = t.meta.description;
-  if (pathname.startsWith("/catalog")) {
-    title = `${t.catalog.pageTitle} | Gerflor Kazakhstan`;
-    description = t.catalog.pageText;
-  } else if (pathname.startsWith("/gallery")) {
-    title = `${t.gallery.pageTitle} | Gerflor Kazakhstan`;
-    description = t.gallery.pageText;
-  } else if (pathname.startsWith("/services")) {
-    title = `${t.services.title} | Gerflor Kazakhstan`;
-    description = t.services.text;
-  } else if (pathname.startsWith("/contacts")) {
-    title = `${t.contacts.title} | Gerflor Kazakhstan`;
-    description = t.contacts.intro;
-  } else if (pathname.startsWith("/privacy")) {
-    title = `${t.privacy.title} | Gerflor Kazakhstan`;
-    description = t.privacy.title;
-  }
-  document.title = title;
+  document.title = t.meta.title;
   document.documentElement.lang = locale;
   const meta = document.querySelector('meta[name="description"]');
-  if (meta) meta.setAttribute("content", description);
+  if (meta) meta.setAttribute("content", t.meta.description);
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
@@ -80,12 +62,16 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const url = new URL(window.location.href);
     if (next === DEFAULT_LOCALE) url.searchParams.delete("lang");
     else url.searchParams.set("lang", next);
-    window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
-    applyDocumentMeta(next, url.pathname);
+    window.history.replaceState(
+      {},
+      "",
+      `${url.pathname}${url.search}${url.hash}`,
+    );
+    applyDocumentMeta(next);
   }, []);
 
   useEffect(() => {
-    applyDocumentMeta(locale, pathname);
+    applyDocumentMeta(locale);
   }, [locale, pathname]);
 
   const value = useMemo(

@@ -4,11 +4,9 @@
 
 :root {
   color-scheme: light;
-  --gf-navy: 0 23 64;
-  --gf-accent: 193 87 63;
-  --gf-accent-hover: 164 72 52;
-  --gf-surface: 250 249 246;
-  --gf-ink: 0 23 64;
+  --color-navy: 15 23 42;
+  --color-surface: 248 250 252;
+  --color-ink: 15 23 42;
 }
 
 html {
@@ -16,8 +14,8 @@ html {
 }
 
 body {
-  background-color: rgb(var(--gf-surface));
-  color: rgb(var(--gf-ink));
+  background-color: rgb(var(--color-surface));
+  color: rgb(var(--color-ink));
   @apply antialiased;
 }
 
@@ -28,26 +26,5 @@ body {
 
   .tap-target {
     @apply inline-flex min-h-tap min-w-tap items-center justify-center;
-  }
-
-  .btn-primary {
-    background-color: rgb(var(--gf-accent));
-    @apply tap-target rounded-full px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
-  }
-
-  .btn-primary:hover {
-    background-color: rgb(var(--gf-accent-hover));
-  }
-
-  .btn-secondary {
-    @apply tap-target rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:bg-white/20;
-  }
-
-  .btn-outline {
-    @apply tap-target rounded-full border border-gerflor-navy bg-transparent px-6 py-3 text-sm font-semibold text-gerflor-navy transition-all duration-300 hover:scale-[1.02] hover:bg-gerflor-navy hover:text-white;
-  }
-
-  .section {
-    @apply py-12 md:py-16 lg:py-24;
   }
 }

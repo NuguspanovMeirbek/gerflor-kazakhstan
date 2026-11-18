@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import PrivacyContent from "@/components/pages/PrivacyContent";
+import MaintenanceScreen from "@/components/MaintenanceScreen";
+import { SITE } from "@/lib/config/site";
 
 export const metadata: Metadata = {
-  title: "Политика конфиденциальности",
-  description:
-    "Политика конфиденциальности ТОО «Astana Sport Line» — эксклюзивного дистрибьютора Gerflor в Казахстане.",
-  robots: { index: true, follow: true },
+  title: SITE.description,
+  description: SITE.description,
 };
 
 export default function PrivacyPage() {
-  return <PrivacyContent />;
+  return <MaintenanceScreen />;
 }

@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="bg-gerflor-navy text-white">
       <div className="container-site grid grid-cols-1 gap-10 py-12 md:grid-cols-2 lg:grid-cols-3">
         <div>
-          <p className="text-lg font-semibold">Gerflor Kazakhstan</p>
+          <p className="text-2xl font-semibold tracking-tight">Sportflor</p>
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/75">
             {t.footer.blurb}
           </p>

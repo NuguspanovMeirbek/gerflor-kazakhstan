@@ -1,21 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Instagram, Menu, Phone, X } from "lucide-react";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-import { asset } from "@/lib/asset";
 import { NAV_HREFS } from "@/lib/i18n/dictionaries";
 import { useI18n } from "@/lib/i18n/context";
 import { SITE, whatsappQuoteLink } from "@/lib/site";
 
 export default function Header() {
   const pathname = usePathname();
-  const { t, locale } = useI18n();
-  const compactChrome = locale !== "en";
+  const { t } = useI18n();
   const [open, setOpen] = useState(false);
   const quoteHref = whatsappQuoteLink(t.wa.quote);
 
@@ -35,18 +32,13 @@ export default function Header() {
       <div className="container-site flex h-16 items-center justify-between gap-3 lg:h-[72px]">
         <Link
           href="/"
-          className="tap-target flex min-w-0 items-center gap-2.5 rounded-md pr-2"
+          className="tap-target flex min-w-0 items-center gap-3 rounded-md pr-2"
           aria-label={t.header.homeAria}
         >
-          <Image
-            src={asset("/images/logo-gerflor.png")}
-            alt={t.header.logoAlt}
-            width={140}
-            height={36}
-            className="h-8 w-auto lg:h-9"
-            priority
-          />
-          <span className="border-l border-slate-200 pl-2.5 text-xs font-semibold uppercase tracking-wide text-gerflor-navy">
+          <span className="text-xl font-semibold tracking-tight text-gerflor-navy">
+            Sportflor
+          </span>
+          <span className="hidden border-l border-slate-200 pl-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500 sm:inline">
             {t.header.country}
           </span>
         </Link>
@@ -79,11 +71,11 @@ export default function Header() {
             href={SITE.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="tap-target shrink-0 gap-2 rounded-full border border-slate-200 px-3 text-sm font-semibold text-gerflor-navy transition-colors hover:border-[#E4405F] hover:text-[#E4405F]"
+            className="tap-target shrink-0 rounded-full border border-slate-200 px-3 text-gerflor-navy transition-colors hover:border-gerflor-accent hover:text-gerflor-accent"
             aria-label={t.header.instagramAria}
           >
             <Instagram className="h-4 w-4" aria-hidden />
-            {compactChrome ? null : t.header.instagram}
+            <span className="sr-only">{t.header.instagram}</span>
           </a>
           <a
             href={SITE.phoneHref}
@@ -153,7 +145,7 @@ export default function Header() {
                 href={SITE.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="tap-target mt-6 justify-start gap-2 rounded-xl bg-[#E4405F] px-3 text-base font-semibold text-white"
+                className="tap-target mt-6 justify-start gap-2 rounded-xl border border-slate-200 px-3 text-base font-semibold text-gerflor-navy"
                 onClick={() => setOpen(false)}
               >
                 <Instagram className="h-5 w-5" aria-hidden />

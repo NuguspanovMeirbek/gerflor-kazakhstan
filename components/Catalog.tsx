@@ -1,9 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import {
   catalogProducts,
   type CatalogCategory,
@@ -16,25 +16,39 @@ type CatalogProps = {
   compact?: boolean;
 };
 
-const FILTERS: Array<"all" | CatalogCategory> = [
-  "all",
-  "sport",
-  "floor",
-  "wall",
-];
+const FILTERS: Array<"all" | CatalogCategory> = ["all", "sport", "floor", "wall"];
+
+const FAMILY_LABEL = {
+  taraflex: "Taraflex",
+  taralay: "Taralay",
+  mural: "Mural Revela",
+} as const;
 
 export default function Catalog({ heading, compact = false }: CatalogProps) {
   const { t } = useI18n();
   const [filter, setFilter] = useState<"all" | CatalogCategory>("all");
   const quoteHref = whatsappQuoteLink(t.wa.quote);
 
-  const items = useMemo(() => {
-    if (compact) {
-      return catalogProducts.filter((product) => product.featured);
+  useEffect(() => {
+    const value = new URLSearchParams(window.location.search).get("category");
+    if (value === "sport" || value === "floor" || value === "wall") {
+      setFilter(value);
     }
+  }, []);
+
+  const items = useMemo(() => {
+    if (compact) return catalogProducts.filter((product) => product.featured);
     if (filter === "all") return catalogProducts;
     return catalogProducts.filter((product) => product.category === filter);
   }, [compact, filter]);
+
+  function selectFilter(key: "all" | CatalogCategory) {
+    setFilter(key);
+    const url = new URL(window.location.href);
+    if (key === "all") url.searchParams.delete("category");
+    else url.searchParams.set("category", key);
+    window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
+  }
 
   const filterLabel = (key: (typeof FILTERS)[number]) => {
     if (key === "all") return t.catalog.filterAll;
@@ -42,41 +56,32 @@ export default function Catalog({ heading, compact = false }: CatalogProps) {
   };
 
   return (
-    <section className="section" id="catalog">
+    <section className="bg-white pb-20 pt-8 md:pb-28 md:pt-10" id="catalog">
       <div className="container-site">
-        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-gerflor-accent">
-              {t.catalog.eyebrow}
-            </p>
-            <h2 className="mt-2 text-2xl font-semibold text-gerflor-navy md:text-4xl">
-              {heading ?? (compact ? t.catalog.heading : t.catalog.collections)}
+        {compact ? (
+          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <h2 className="text-2xl font-semibold text-gerflor-navy md:text-4xl">
+              {heading ?? t.catalog.heading}
             </h2>
-          </div>
-          {compact ? (
-            <Link
-              href="/catalog"
-              className="tap-target text-sm font-semibold text-gerflor-accent hover:underline"
-            >
+            <Link href="/catalog/" className="text-sm font-semibold text-gerflor-accent">
               {t.catalog.all}
             </Link>
-          ) : null}
-        </div>
-
-        {compact ? null : (
-          <div className="mt-8 flex flex-wrap gap-2">
+          </div>
+        ) : (
+          <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:px-0">
             {FILTERS.map((key) => {
               const active = filter === key;
               return (
                 <button
                   key={key}
                   type="button"
-                  onClick={() => setFilter(key)}
-                  className={`tap-target rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+                  onClick={() => selectFilter(key)}
+                  className={`inline-flex min-h-11 shrink-0 items-center px-4 text-sm font-semibold transition-colors ${
                     active
                       ? "bg-gerflor-navy text-white"
-                      : "border border-slate-200 bg-white text-gerflor-navy hover:border-gerflor-navy"
+                      : "bg-[#f4f6f8] text-gerflor-navy hover:bg-slate-200"
                   }`}
+                  aria-pressed={active}
                 >
                   {filterLabel(key)}
                 </button>
@@ -85,65 +90,49 @@ export default function Catalog({ heading, compact = false }: CatalogProps) {
           </div>
         )}
 
-        <div
-          className={`mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 ${compact ? "" : "xl:grid-cols-4"}`}
-        >
-          {items.map((product, index) => {
+        <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((product) => {
             const copy = t.catalog.products[product.id];
             if (!copy) return null;
             return (
-              <motion.article
-                key={product.id}
-                id={product.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.4, delay: index * 0.04 }}
-                className="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
-              >
+              <article key={product.id} id={product.id} className="flex flex-col">
                 <div className="relative aspect-[4/3] bg-slate-100">
                   <Image
                     src={product.image}
                     alt={copy.imageAlt}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover"
                   />
                 </div>
-                <div className="flex flex-1 flex-col p-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-gerflor-accent">
-                    {t.catalog[product.category]}
+                <div className="flex flex-1 flex-col pt-5">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gerflor-accent">
+                    {FAMILY_LABEL[product.family]}
                   </p>
-                  <h3 className="mt-1 text-lg font-semibold text-gerflor-navy">
+                  <h2 className="mt-2 text-2xl font-semibold leading-tight tracking-tight text-gerflor-navy">
                     {copy.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                    {copy.summary}
-                  </p>
-                  <ul className="mt-4 space-y-1.5 text-sm text-slate-700">
+                  </h2>
+                  <p className="mt-1 text-sm text-slate-500">{t.catalog[product.category]}</p>
+                  <p className="mt-4 text-sm leading-6 text-slate-600">{copy.summary}</p>
+                  <ul className="mt-4 space-y-1.5 text-sm leading-6 text-slate-700">
                     {copy.specs.map((spec) => (
-                      <li key={spec} className="flex gap-2">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gerflor-accent" />
-                        {spec}
-                      </li>
+                      <li key={spec}>{spec}</li>
                     ))}
                   </ul>
                   {copy.price ? (
-                    <p className="mt-4 text-base font-semibold text-gerflor-navy">
-                      {copy.price}
-                    </p>
+                    <p className="mt-5 text-lg font-semibold text-gerflor-navy">{copy.price}</p>
                   ) : null}
-                  <div className="flex-1" />
                   <a
                     href={quoteHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-primary mt-5 w-full"
+                    className="mt-5 inline-flex min-h-11 items-center gap-2 self-start text-sm font-semibold text-[#1F7A4D]"
                   >
                     {t.catalog.request}
+                    <ArrowUpRight className="h-4 w-4" aria-hidden />
                   </a>
                 </div>
-              </motion.article>
+              </article>
             );
           })}
         </div>

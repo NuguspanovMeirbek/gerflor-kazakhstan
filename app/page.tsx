@@ -1,17 +1,14 @@
-import About from "@/components/About";
-import Catalog from "@/components/Catalog";
-import Features from "@/components/Features";
-import Gallery from "@/components/Gallery";
-import Hero from "@/components/Hero";
+import type { Metadata } from "next";
+import HomeView from "@/components/home/HomeView";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Sportflor — спортивные и коммерческие покрытия нового уровня",
+  },
+  description:
+    "Поставка, проектирование и профессиональный монтаж покрытий для спортивных и коммерческих объектов.",
+};
 
 export default function HomePage() {
-  return (
-    <>
-      <Hero />
-      <About />
-      <Features />
-      <Catalog compact />
-      <Gallery compact />
-    </>
-  );
+  return <HomeView />;
 }

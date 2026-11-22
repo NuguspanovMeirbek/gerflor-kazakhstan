@@ -125,10 +125,10 @@ export type Dictionary = {
 export const dictionaries: Record<Locale, Dictionary> = {
   ru: {
     meta: {
-      title: "Gerflor Kazakhstan — спортивные покрытия под ключ",
+      title: "Sportflor — спортивные и коммерческие покрытия нового уровня",
       description:
-        "Прямые поставки французских покрытий Gerflor и монтаж по стандартам завода в Казахстане — от проектирования до сдачи объекта технадзору и международным комиссиям.",
-      ogTitle: "Gerflor Kazakhstan — спортивные пространства под ключ",
+        "Поставка, проектирование и профессиональный монтаж покрытий для спортивных и коммерческих объектов.",
+      ogTitle: "Sportflor — спортивные и коммерческие покрытия нового уровня",
     },
     nav: {
       home: "Главная",
@@ -141,11 +141,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       footerAria: "Навигация в подвале",
     },
     header: {
-      homeAria: "Gerflor Kazakhstan — на главную",
+      homeAria: "Sportflor — на главную",
       country: "Kazakhstan",
-      logoAlt: "Логотип Gerflor",
+      logoAlt: "Sportflor",
       instagram: "Instagram",
-      instagramAria: "Instagram Gerflor Kazakhstan",
+      instagramAria: "Instagram Sportflor",
       calculate: "Рассчитать проект",
       openMenu: "Открыть меню",
       closeMenu: "Закрыть меню",
@@ -205,7 +205,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       collections: "Коллекции и тарифы",
       filterAll: "Все",
       sport: "Спортивные покрытия",
-      floor: "Напольные покрытия",
+      floor: "Коммерческие покрытия",
       wall: "Настенные покрытия",
       products: {
         "taraflex-evolution": {
@@ -566,10 +566,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
   },
   kk: {
     meta: {
-      title: "Gerflor Kazakhstan — кілтпен берілетін спорт жабындары",
+      title: "Sportflor — жаңа деңгейдегі спорттық және коммерциялық жабындар",
       description:
-        "Қазақстанда Gerflor француз жабындарын тікелей жеткізу және зауыт стандарттары бойынша монтаждау — жобалаудан технадзор мен халықаралық комиссияларға тапсыруға дейін.",
-      ogTitle: "Gerflor Kazakhstan — кілтпен берілетін спорт кеңістіктері",
+        "Спорттық және коммерциялық нысандарға арналған жабындарды жеткізу, жобалау және кәсіби монтаждау.",
+      ogTitle: "Sportflor — жаңа деңгейдегі спорттық және коммерциялық жабындар",
     },
     nav: {
       home: "Басты бет",
@@ -582,11 +582,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       footerAria: "Төменгі навигация",
     },
     header: {
-      homeAria: "Gerflor Kazakhstan — басты бетке",
+      homeAria: "Sportflor — басты бетке",
       country: "Kazakhstan",
-      logoAlt: "Gerflor логотипі",
+      logoAlt: "Sportflor",
       instagram: "Instagram",
-      instagramAria: "Gerflor Kazakhstan Instagram",
+      instagramAria: "Sportflor Instagram",
       calculate: "Жобаны есептеу",
       openMenu: "Мәзірді ашу",
       closeMenu: "Мәзірді жабу",
@@ -646,7 +646,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       collections: "Коллекциялар мен тарифтер",
       filterAll: "Барлығы",
       sport: "Спорт жабындары",
-      floor: "Еден жабындары",
+      floor: "Коммерциялық жабындар",
       wall: "Қабырға жабындары",
       products: {
         "taraflex-evolution": {
@@ -1007,10 +1007,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
   },
   en: {
     meta: {
-      title: "Gerflor Kazakhstan — turnkey sports flooring",
+      title: "Sportflor — sports and commercial flooring of a new standard",
       description:
-        "Direct supply of French Gerflor floor coverings and factory-standard installation in Kazakhstan — from design to handover to technical supervision and international commissions.",
-      ogTitle: "Gerflor Kazakhstan — turnkey sports spaces",
+        "Supply, design and professional installation of flooring for sports and commercial facilities.",
+      ogTitle: "Sportflor — sports and commercial flooring of a new standard",
     },
     nav: {
       home: "Home",
@@ -1023,11 +1023,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       footerAria: "Footer navigation",
     },
     header: {
-      homeAria: "Gerflor Kazakhstan — home",
+      homeAria: "Sportflor — home",
       country: "Kazakhstan",
-      logoAlt: "Gerflor logo",
+      logoAlt: "Sportflor",
       instagram: "Instagram",
-      instagramAria: "Gerflor Kazakhstan on Instagram",
+      instagramAria: "Sportflor on Instagram",
       calculate: "Get a quote",
       openMenu: "Open menu",
       closeMenu: "Close menu",
@@ -1087,7 +1087,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       collections: "Collections and rates",
       filterAll: "All",
       sport: "Sports flooring",
-      floor: "Floor coverings",
+      floor: "Commercial flooring",
       wall: "Wall coverings",
       products: {
         "taraflex-evolution": {
